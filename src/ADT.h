@@ -1,6 +1,5 @@
 #ifndef ADTH_H
 #define ADTH_H
-#include "boolean_h.h"
 
 //spesifikasi
 typedef struct

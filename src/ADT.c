@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "ADTH.h"
+#include "ADT.h"
 #include <time.h>
 
 /* body prototype */
