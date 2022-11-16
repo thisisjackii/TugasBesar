@@ -2,7 +2,6 @@
 
 int main ()
 {
-	// clearScreen();
 	welcomePage();
 	return 0;
 }
