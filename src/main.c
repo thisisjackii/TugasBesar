@@ -1,107 +1,132 @@
 #include "ADT.h"
 
-// int main ()
-// {
-// 	clearScreen();
-// 	welcomePage();
-// 	return 0;
-// }
-
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <conio.h>
+#include <windows.h>
+#include <ctype.h>
+#include <time.h>
 
-int Conversion, Arithmatic, tempr; char tempunit;
+int main() {
+	char questions[][100] = {"1. Hasil perhitungan 80 + 42 yaitu: ",
+							"2. Hasil dari 100 + 20 x 13 yaitu:  ",
+							"3. Total dari 1.444 + 112 - 20 :    ",
+							"4. Perhitungan dari 99 + 89 - 22:   ",
+							"5. Perhitungan 66 - 13 + 10 + 23:   ",
+							"6. Satuan Desimeter adalah:         ",
+							"7. Satuan Miligram adalah:          ",
+							"8. Sistem bilangan biner menggunakan dua simbol khusus, yaitu: ",
+							"9. Rumus dari skala Celcius ke Kelvin adalah: ",
+							"10. Cara menghitung miligram ke gram dengan :"};
 
-typedef struct {
-	int orderNum;
-} theMenu;
+	char options[][100] = {"A. 122", "B. 112", "C. 102", "D. 132",
+							"A. 330", "B. 340", "C. 350", "D. 360",
+							"A. 1.526", "B. 1.536", "C. 1.516", "D. 1.506",
+							"A. 156", "B. 166", "C. 176", "D. 146",
+							"A. 84", "B. 85", "C. 86", "D. 87",
+							"A. dm", "B. dam", "C. dcm", "D. d",
+							"A. g", "B. kg", "C. mg", "D. mcg",
+							"A. 0 dan 1", "B. 1 dan 2", "C. 0 dan 2", "D. 0 dan -1",
+							"A. -273", "B. +273", "C. -373", "D. +373",
+							"A. membagi 100", "B. membagi 1000", "C. kali 100", "D. membagi 1000"};
 
-void temprConv(int *tempra, int* firstRes, int* secondRes, char *tempraUnit, char* firstResUnit, char* secondResUnit){
-	switch(*tempraUnit){
-		case 'f': case 'F':
-			*firstRes = (*tempra - 32) / 1.8; *firstResUnit = 'C';
-			*secondRes = *tempra + 273.15; *secondResUnit = 'K';
-			break;
-		case 'k': case 'K':
-			*firstRes = *tempra - 273.15; *firstResUnit = 'C';
-			*secondRes = (*tempra * 1.8) + 32; *secondResUnit = 'F';
-			break;
-		case 'c': case 'C':
-			*firstRes = (*tempra * 1.8) + 32; *firstResUnit = 'F';
-			*secondRes = *tempra + 273.15; *secondResUnit = 'K';
-			break; 
-		default:
-			break;
+	char answers[] = {'A', 'D', 'B', 'B', 'C', 'A', 'C', 'A', 'B', 'B'};
+	int numberOfQuestions = sizeof(questions)/sizeof(questions[0]);
+
+	char guess[3];
+	int score;
+   	// unsigned int x_hours=0;
+	// unsigned int x_minutes=0;
+	// unsigned int x_seconds=0;
+	// unsigned int x_milliseconds=0;
+	// unsigned int totaltime=0,count_down_time_in_secs=0,time_left=0;
+
+	// clock_t x_startTime,x_countTime;
+	// count_down_time_in_secs=10;  // 1 minute is 60, 1 hour is 3600
+
+
+    // x_startTime=clock();  // start clock
+    // time_left=count_down_time_in_secs-x_seconds;   // update timer
+
+	printf("QUIZ GAME\n");
+
+	for(int i = 0; i < numberOfQuestions; i++) {
+//      printf("*******\n");
+//      printf("%s\n", questions[i]);
+//      printf("*******\n");
+//
+//      for(int j = (i * 4); j < (i * 4) + 4; j++)
+//      {
+//         printf("%s\n", options[j]);
+//      }
+		//count_down_time_in_secs=10; x_seconds=0;
+		//time_left=count_down_time_in_secs-x_seconds; // update timer
+		// while (time_left>0){
+		int x=10;
+		while (x>0){
+			// x_countTime=clock(); // update timer difference
+			// x_milliseconds=x_countTime-x_startTime;
+			// x_seconds=(x_milliseconds/(CLOCKS_PER_SEC))-(x_minutes*60);
+			// x_minutes=(x_milliseconds/(CLOCKS_PER_SEC))/60;
+			// x_hours=x_minutes/60;
+			// time_left=count_down_time_in_secs-x_seconds; // subtract to get difference
+			system("cls");
+			printf	("\n\t\t\t\t\t         (____________________________  PERTANYAAN  ___________________________)    \n");
+			printf	("\t\t\t\t\t        ( \\                 					              / )  \n");
+			printf	("\t\t\t\t\t       ( \\ )               					             ( / ) \n");
+			printf	("\t\t\t\t\t      ( ) (  %s                             ) ( ) \n", questions[i] ); 
+			printf	("\t\t\t\t\t       ( / )               					             ( \\ ) \n");
+			printf	("\t\t\t\t\t        ( /                 					              \\ )  \n");
+			printf	("\t\t\t\t\t         (_____________________________________________________________________)   \n\n");
+
+			for(int j = (i * 4); j < (i * 4) + 4; j++){
+				printf("\t\t\t\t\t\t\t\t\t         %s\n", options[j]);
+			}
+			printf( "\n\t\t\t\t\t\t\t\t       --> Waktu Anda %d detik lagi.", x);
+			Sleep(1000);
+			x--;
+			// printf( "\nYou have %d seconds left ( %d ) count down timer by TopCoder ",time_left,count_down_time_in_secs);
+		}
+		system("cls");
+    	printf("\nJawaban Anda: ");
+    	//scanf("%c", &guess[i]);
+    	guess[i] = getch();
+    	//scanf("%c"); //clear \n from input buffer
+
+		guess[i] = toupper(guess[i]);
+		printf("\nPilihan Anda: %c\n", guess[i]);
+
+		if(guess[i] == answers[i]){
+    		printf("BENAR!\n");
+    		score++;
+    	} else {
+        	printf("SALAH :(\n");
+    	}
+		Sleep(1000);
 	}
-}
-
-void Pilih_Suhu(int *tempra, char *tempraUnit){
-	printf	("\n\t\t\t\t<<<<<<<<<<<<<<<  Anda memilih opsi konversi suhu  >>>>>>>>>>>>>>>"); 
-	puts	("\n\n\t\t\t\t\t|================== KONVERSI SUHU ==================|");
-    printf	("\t\t\t\t\t Masukkan besaran suhu beserta satuannya (F, C, K) >> "); scanf("%d %c", tempra, tempraUnit);
-	int tempraA, tempraB; char tempraUnitA, tempraUnitB;
-	temprConv(tempra, &tempraA, &tempraB, tempraUnit, &tempraUnitA, &tempraUnitB);
-	printf("\n\t\t\t\t\t\t%d %c\n\t\t\t\t\t\t%d %c", tempraA, tempraUnitA, tempraB, tempraUnitB);
-}
-
-void konversi(int *pilKonv){
-	printf	("\n\t\t\t\t\t<<<<<<<<<<<<<<<  Anda memilih opsi 1  >>>>>>>>>>>>>>>"); 
-	puts	("\n\n\t\t\t\t|================== PILIH KONFIGURASI KONVERSI ==================|");
-	puts	("\t\t\t\t|                   1. KONVERSI SUHU                             |");
-	puts	("\t\t\t\t|                   2. KONVERSI SISTEM BILANGAN                  |");
-	puts	("\t\t\t\t|                   3. KONVERSI PANJANG                          |");
-	puts	("\t\t\t\t|                   4. KONVERSI MASSA                   	 |");
-	puts	("\t\t\t\t|                   5. KONVERSI WAKTU                	         |");
-    puts	("\t\t\t\t+================================================================+");
-    printf	("\t\t\t\t\t\tPilih menu yang ingin anda Konversikan >> "); scanf("%d", pilKonv);
-    switch(*pilKonv){
-		case 1:
-			Pilih_Suhu(&tempr, &tempunit);
-			break;
-		default:
-			printf("Wrong input."); break;
+	system("cls");
+	printf	("\n\n\n\t\t\t\t\t\t        __| |____________________________________________| |__  \n");
+	printf	("\t\t\t\t\t\t       (__   ____________________________________________   __) \n");
+	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
+	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
+	printf	("\t\t\t\t\t\t          | |          NILAI ANDA ADALAH: %d/%d           | |     \n", score, numberOfQuestions);
+	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
+	printf	("\t\t\t\t\t\t        __| |____________________________________________| |__  \n");
+	printf	("\t\t\t\t\t\t       (__   ____________________________________________   __) \n");
+	printf	("\t\t\t\t\t\t          | |                                            | |    \n"); 
+	
+//	printf("NILAI ANDA ADALAH: %d/%d\n", score, numberOfQuestions);
+	
+	if (score >= 8 && score <= 10){
+		printf	("\n\t\t\t\t\t\t\t---> Anda mendapatkan nilai yang sempurna! Selamat! <---");
+	} else if(score >= 5 && score < 8){
+		printf	("\n\t\t\t\t\t\t    ---> Nilai Anda kurang sempurna :(, Ayo coba lagi Quiznya! <---");
+	} else {
+		printf	("\n\t\t\t\t\t   ---> Nilai Anda tidak sempurna ;(, Jangan menyerah! Ayo coba lagi Quiznya! <---");
 	}
-}
 
-void aritmatika(int *pilAritm){
-	printf("\n\t\t\t\t\t<<<<<<<<<<<<<<<  Anda memilih opsi 2  >>>>>>>>>>>>>>>"); 
-	puts	("\n\n\t\t\t\t|================== PILIH KONFIGURASI ARITMATIKA ====================|");
-	puts	("\t\t\t\t|                   1. PENJUMLAHAN                    		     |");
-	puts	("\t\t\t\t|                   2. PENGURANGAN                   		     |");
-	puts	("\t\t\t\t|                   3. PERKALIAN                     		     |");
-	puts	("\t\t\t\t|                   4. PEMBAGIAN                  		     |");
-    puts	("\t\t\t\t+====================================================================+");
-    printf	("\t\t\t\t\t\tPilih menu yang ingin anda hitung >> "); scanf("%d", pilAritm);
+	return 0;
 }
-
-void Pilih_Menu(int *PilKonf){
-	int columns = strtol(getenv("COLUMNS"), NULL, 10);
-	int fwidth = strlen("Hello") + (columns - strlen("Hello")) / 2;
-	printf("%*s\n", fwidth, "Hello");
-	puts	("\n\t\t\t\t|===================== PILIH KONFIGURASI =======================|");
-	puts	("\t\t\t\t|                    1. KONFIGURASI KONVERSI                    |");
-	puts	("\t\t\t\t|                   2. KONFIGURASI ARITMATIKA                   |");
-    puts	("\t\t\t\t+===============================================================+");
-    printf	("\t\t\t\t\t\tPilih menu yang ingin anda Kalkulasikan >> "); scanf("%d", PilKonf);
-	switch(*PilKonf)
-	{
-		case 1:
-			konversi(&Conversion);
-			break;
-		case 2:
-			aritmatika(&Arithmatic);
-			break;
-		default:
-			printf("Wrong input."); break;
-	}
-}
-
-int main(){
-	int numChoosed;
-	Pilih_Menu(&numChoosed);
-}
-
 
 // BLUEPRINTS! DO NOT UN-COMMENT THESE!!!
 // #include <stdio.h>
