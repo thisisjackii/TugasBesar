@@ -1,12 +1,5 @@
 #include "ADT.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <conio.h>
-#include <windows.h>
-#include <ctype.h>
-#include <time.h>
-
 int main() {
 	char questions[][100] = {"1. Hasil perhitungan 80 + 42 yaitu: ",
 							"2. Hasil dari 100 + 20 x 13 yaitu:  ",
@@ -105,7 +98,7 @@ int main() {
 		Sleep(1000);
 	}
 	system("cls");
-	printf	("\n\n\n\t\t\t\t\t\t        __| |____________________________________________| |__  \n");
+	printf	("\t\t\t\t\t\t        __| |____________________________________________| |__  \n");
 	printf	("\t\t\t\t\t\t       (__   ____________________________________________   __) \n");
 	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
 	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
