@@ -1,0 +1,53 @@
+
+			 $$$$$$\  $$\             $$\                                   $$$$$$$\  $$\ $$\                                                   
+			$$  __$$\ \__|            $$ |                                  $$  __$$\ \__|$$ |                                                  
+			$$ /  \__|$$\  $$$$$$$\ $$$$$$\    $$$$$$\  $$$$$$\$$$$\        $$ |  $$ |$$\ $$ | $$$$$$\  $$$$$$$\   $$$$$$\   $$$$$$\  $$$$$$$\  
+			\$$$$$$\  $$ |$$  _____|\_$$  _|  $$  __$$\ $$  _$$  _$$\       $$$$$$$\ |$$ |$$ | \____$$\ $$  __$$\ $$  __$$\  \____$$\ $$  __$$\ 
+			 \____$$\ $$ |\$$$$$$\    $$ |    $$$$$$$$ |$$ / $$ / $$ |      $$  __$$\ $$ |$$ | $$$$$$$ |$$ |  $$ |$$ /  $$ | $$$$$$$ |$$ |  $$ |
+			$$\   $$ |$$ | \____$$\   $$ |$$\ $$   ____|$$ | $$ | $$ |      $$ |  $$ |$$ |$$ |$$  __$$ |$$ |  $$ |$$ |  $$ |$$  __$$ |$$ |  $$ |
+			\$$$$$$  |$$ |$$$$$$$  |  \$$$$  |\$$$$$$$\ $$ | $$ | $$ |      $$$$$$$  |$$ |$$ |\$$$$$$$ |$$ |  $$ |\$$$$$$$ |\$$$$$$$ |$$ |  $$ |
+			 \______/ \__|\_______/    \____/  \_______|\__| \__| \__|      \_______/ \__|\__| \_______|\__|  \__| \____$$ | \_______|\__|  \__|
+			                                                                                                      $$\   $$ |                    
+			                                                                                                      \$$$$$$  |                    
+			                                                                                                       \______/                     
+
+
+	Halo, disini kami akan menjelaskan mengenai sistem bilangan. Apa sih sistem bilangan itu? Jadi Sistem Bilangan itu adalah sebuah cara menentukan bagaimana suatu bilangan dapat diwakili menggunakan simbol yang telah disepakati. Nah Sistem bilangan yang digunakan dalam komputer itu adalah :
+
+1. Sistem Bilangan Biner
+	Sistem ini menggunakan dua simbol khusus, yaitu 0 dan 1. Disebut juga sistem bilangan berbasis 2. Biner merupakan bilangan dasar yang digunakan dalam sistem komputer digital. Nah disini kami akan menjelaskan bagaimana cara mengonversi secara manual dalam mengonversi Desimal ke dalam Biner, berikut penjelasannya:
+--> Misalnya itu bilangan desimal 52 ke bilangan biner! Caranya yaitu dengan membagi 2 terus-menerus dan tuliskan sisanya. Lalu mengurutkan angka dari bawah hingga atas dalam penulisan binernya.
+
+> 52 : 2 = 26 sisa 0
+> 26 : 2 = 13 sisa 0
+> 13 : 2 = 6 sisa 1
+> 6 : 2 = 3 sisa 0
+> 3 : 2 = 1 sisa 1
+> 1 : 2 = 0 sisa 1
+---> Jadi, jawabannya yaitu 110100. Nah kalian bisa juga lho, latihan mengenai konversi ini pada bagian "Quiz" yaa!
+
+2. Sistem Bilangan Oktal
+	Sistem ini menggunakan delapan simbol khusus, yaitu 0 s/d 7. Disebut juga sistem bilangan berbasis 8. Nah disini kami akan menjelaskan bagaimana cara mengonversi secara manual dalam mengonversi Desimal ke dalam Oktal, berikut penjelasannya:
+--> Untuk mengkonversikan bilangan desimal yang berbasis 10 ke bilangan oktal yang berbasis 8, kita harus membagi bilangan desimal ke basis bilangan oktal yaitu 8, hasilnya kemudian dibulatkan kebawah dan sisa hasil pembagiannya dicatat dan disimpan. Misalnya mengonversikan bilangan desimal nilai 70 menjadi bilangan oktal:
+
+> 70 : 8 = 8 sisa 6
+> 8 : 8 = 1 sisa 0
+> 1 : 8 = 0 sisa 1
+---> Jadi, jawabannya yaitu 106. 
+
+3. Sistem Bilangan Desimal
+	Sistem ini menggunakan delapan simbol khusus, yaitu 0 s/d 9. Disebut juga sistem bilangan berbasis 10. Sepuluh simbol angka itu mulai dari 0, 1, 2, 3, 4, 5, 6, 7, 8 dan 9. 
+
+4. Sistem Bilangan Heksadesimal 
+	Sistem ini menggunakan delapan simbol khusus, yaitu 0 s/d 9, A,B,C,D,E,F. Disebut juga sistem bilangan berbasis 16 dan merupakan satusatunya sistem bilangan yang menggunakan huruf. Huruf-huruf A,B,C,D,E,F berturut-turut nilainya itu adalah 10,11,12,13,14,15. Nah disini kami akan menjelaskan bagaimana cara mengonversi secara manual dalam mengonversi Desimal ke dalam Heksadesimal, berikut penjelasannya:
+--> Cara konversi bilangan desimal ke bilangan heksadesimal sebenarnya cukup mudah yaitu membagi bilangan desimal ke basis bilangan heksadesimal yaitu 16. hasilnya kemudian dibulatkan kebawah dan sisa hasil pembagiannya disimpan atau dicatat. Misalnya mengkonversikan bilangan desimal 152110 menjadi bilangan heksadesimal:
+
+> 1521 : 16 = 95 sisa bagi adalah 1
+> 95 : 16 = 5 sisa bagi adalah 15 atau dalam heksadesimal adalah F
+> 5: 16 = 0 sisa bai adalah 5
+
+---> Jadi, jawabannya yaitu 5F1
+
+
+				     <---- Nah kalian bisa juga lho, latihan mengenai konversi ini pada bagian "Quiz" yaa! >.< ---->
+

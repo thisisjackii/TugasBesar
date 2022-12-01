@@ -1,0 +1,41 @@
+
+			       $$$$$$\             $$\                                         $$\      $$\           $$\         $$\               
+			      $$  __$$\            $$ |                                        $$ | $\  $$ |          $$ |        $$ |              
+			      $$ /  \__| $$$$$$\ $$$$$$\   $$\   $$\  $$$$$$\  $$$$$$$\        $$ |$$$\ $$ | $$$$$$\  $$ |  $$\ $$$$$$\   $$\   $$\ 
+			      \$$$$$$\   \____$$\\_$$  _|  $$ |  $$ | \____$$\ $$  __$$\       $$ $$ $$\$$ | \____$$\ $$ | $$  |\_$$  _|  $$ |  $$ |
+			       \____$$\  $$$$$$$ | $$ |    $$ |  $$ | $$$$$$$ |$$ |  $$ |      $$$$  _$$$$ | $$$$$$$ |$$$$$$  /   $$ |    $$ |  $$ |
+			      $$\   $$ |$$  __$$ | $$ |$$\ $$ |  $$ |$$  __$$ |$$ |  $$ |      $$$  / \$$$ |$$  __$$ |$$  _$$<    $$ |$$\ $$ |  $$ |
+		              \$$$$$$  |\$$$$$$$ | \$$$$  |\$$$$$$  |\$$$$$$$ |$$ |  $$ |      $$  /   \$$ |\$$$$$$$ |$$ | \$$\   \$$$$  |\$$$$$$  |
+		               \______/  \_______|  \____/  \______/  \_______|\__|  \__|      \__/     \__| \_______|\__|  \__|   \____/  \______/ 
+                                                                                                                      
+                                                                                                                      
+                                                                                                                      
+
+	Halo, disini kami akan menjelaskan mengenai satuan waktu. Satuan waktu secara internasioal telah ditetapkan yaitu detik atau sekon. Nah, Alat yang biasa digunakan untuk mengukur waktu yaitu stopwatch. Dalam stopwatch kita mengenal ada satuan waktu seperti satuan detik, menit maupun jam.     
+	Pasti dari kalian sudah tidak asing lagi mengenai waktu, karena memang pada dasarnya kita memerhatikan waktu. Nah disini, kami akan menjelaskan beberapa konversi waktu yang umumnya dipakai keseharian. Berikut penjelasan perhitungannya: 
+
+--> Detik ke Mikrodetik       = 1 Detik sama dengan 1000000 mikrodetik
+--> Detik ke Milidetik        = 1 Detik sama dengan 1000 milidetik 
+--> Detik ke Menit            = 1 Detik sama dengan 0,0166667 menit
+--> Detik ke Jam              = 1 Detik sama dengan 0,00027777833333 jam
+--> Mikrodetik ke Milidetik   = 1 Miktrodetik sama dengan 0,001 milifrtik
+--> Milidetik ke Menit        = 1 Milidetik sama dengan 1,6667 x 10^-5 menit
+--> Menit ke Jam              = 1 Menit sama dengan 0,0166667 Jam
+--> Jam ke Mikrodetik         = 1 Jam sama dengan  3,6 x 10^9 
+--> Mikrodetik ke Menit	      = 1 Miktrodetik sama dengan  1,6667 x 10^-8 menit
+--> Milidetik ke Jam	      = 1 Milidetik sama dengan 2,7778 x 10^-7 jam
+--> Mikrodetik ke Detik	      = 1 Miktrodetik sama dengan 1,00002 x 10^-6 detik
+--> Milidetik ke Detik	      = 1 Milidetik sama dengan 0,001 detik
+--> Menit ke Detik	      = 1 Menit sama dengan 60 detik 
+--> Jam ke Detik	      = 1 Jam sama dengan 3600 detik
+--> Milidetik ke Mikrodetik   = 1 Milidetik sama dengan 1000 mikrodetik
+--> Menit ke Milidetik        = 1 Menit sama dengan 60000 milidetik 
+--> Jam ke Menit              = 1 Jam sama dengan 60 menit
+--> Mikrodetik ke Jam         = 1 Miktrodetik sama dengan 2,7778 x 10^-10 jam
+--> Menit ke Mikrodetik       = 1 Menit sama dengan 60000000 mikrodetik
+--> Jam ke Milidetik          = 1 Jam sama dengan 3,6 x 10^6
+
+
+				     <---- Nah kalian bisa juga lho, latihan mengenai konversi ini pada bagian "Quiz" yaa! >.< ----> 
+
+

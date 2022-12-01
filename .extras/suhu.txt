@@ -1,0 +1,51 @@
+					
+							      $$$$$$\            $$\                 
+							     $$  __$$\           $$ |                
+							     $$ /  \__|$$\   $$\ $$$$$$$\  $$\   $$\ 
+							     \$$$$$$\  $$ |  $$ |$$  __$$\ $$ |  $$ |
+							      \____$$\ $$ |  $$ |$$ |  $$ |$$ |  $$ |
+							     $$\   $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |
+							     \$$$$$$  |\$$$$$$  |$$ |  $$ |\$$$$$$  |
+ 							      \______/  \______/ \__|  \__| \______/ 
+                                        
+                                        
+                                        
+
+	Halo, disini kami akan menjelaskan mengenai suhu. Nilai derajat sebuah suhu dapat diatur ke dalam empat jenis skala suhu, yaitu Celsius (C), Farenheit (F), Reamur (R), dan Kelvin(K). Adapun skala suhu akan didasarkan pada dua titik tepat, yaitu titik tetap bawah dan titik tetap atas. Titik bawah menandakan titik beku, sementara itu titik atas menunjukkan titik didih. Dalam materi ini, akan dijelaskan satu persatu beserta cara menghitungnya ya! Mohon dibaca baik-baik :)
+
+1. Celcius (C)
+	Apa sih Celcius itu? Celcius itu merupakan skala suhu yang paling sering dipakai, baik di Indonesia maupun di luar negeri. Celcius memiliki satuan derajat C. Dalam melakukan perbandingan antara dingin dan panas, skala Celcius air membeku pada suhu 0 derajat celcius. Sementara skala celcius pada air mendidih adalah 100 derajat celcius. Berikut rumus cara mencari Celcius:
+
+-->Rumus dari skala Celcius ke skala Fahrenheit => T (derajat F) = 9/5 T derajat Celsius + 32
+-->Rumus dari skala Celcius ke skala Reamur => T (derajat R) = 4/5 T derajat R
+-->Rumus dari skala Celcius ke Kelvin => T (K) = T derajat C + 273
+
+2. Fahrenheit (F)
+	Kedua adalah Fahrenheit atau dikenal dengan huruf F saja. Dilihat dari Lumen Learning, Fahrenheit ini merupakan skala pengukur suhu yang paling banyak dipakai di negara Amerika Serikat. Skala Fahrenheit mempunyai satuan derajat Farenheit. Adapun di skala ini, air mendidih ada pada suhu 212 derajat F, sementara air membeku ada pada skala 32 derajat Fahrenheit. Berikut rumus cara mencari Fahrenheit:
+
+-->Rumus dari skala Fahrenheit ke skala Celcius => T (derajat C) = 5/9 T derajat F – 32
+-->Rumus dari skala Fahrenheit ke skala Reamur  => T (derajat R) = 4/9 T derajat F – 32
+-->Rumus dari skala Fahrenheit ke Kelvin => T (K) = 5/9 ( T derajat F – 32) + 273
+
+3. Kelvin (K)
+	Skala pengukuran suhu selanjutnya adalah Kelvin. Skala inilah yang diketahui tidak memiliki derajat. Satuan pada skala ini adalah Kelvin (K). Sebagai perbandingan, dalam skala ini air mendidih pada suhu 373,15 Kelvin, dan air membeku pada suhu 273,15 Kelvin. 
+	Perlu Anda ketahui bahwa skala suhu Kelvin (K) tidak menggunakan derajat, namun menggunakan nol mutlak. Hal ini dapat diartikan bahwa nol Kelvin memiliki makna bahwa tidak ada energi panas sama sekali pada sebuah benda. Hal ini pula yang kemudian menjadikan Kelvin sebagai skala suhu pada Satuan Internasional atau SI. Berikut rumus cara mencari Fahrenheit:
+
+-->Rumus dari skala Kelvin ke skala Celcius => T (derajat C) = TK – 273
+-->Rumus dari skala Kelvin ke skala Fahrenheit => T (derajat F) = 9/5 (TK-273) + 32
+-->Rumus dari skala Kelvin ke skala Reamur => T (derajat R) = 4/5 TK – 273
+
+4. Reamur (R)
+	Terakhir ada Reamur, yaitu skala pengukur suhu yang ditemukan oleh Antoine Ferchault de Reamur pada tahun 1730. Skala Reamur ini mempunyai satuan derajat Reamur. Pada skala ini, suhu untuk air mendidih yaitu sebesar 80 derajat Reamur, dan suhu pada air membeku sebesar 0 derajat Reamur. Berikut rumus cara mencari Fahrenheit:
+
+-->Rumus dari skala Reamur ke Celcius => T (derajat C) = 5/4 T derajat R
+-->Rumus dari skala Reamur ke Fahrenheit => T (derajat F) = 9/4 T derajat F + 32
+-->Rumus dari skala Reamur ke Kelvin => T (K) = 5/4 T derajat R + 273
+
+
+				     <---- Nah kalian bisa juga lho, latihan mengenai konversi ini pada bagian "Quiz" yaa! >.< ---->
+
+
+
+
+

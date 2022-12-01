@@ -1,0 +1,60 @@
+
+			 $$$$$$\             $$\                                         $$\      $$\                                         
+			$$  __$$\            $$ |                                        $$$\    $$$ |                                        
+			$$ /  \__| $$$$$$\ $$$$$$\   $$\   $$\  $$$$$$\  $$$$$$$\        $$$$\  $$$$ | $$$$$$\   $$$$$$$\  $$$$$$$\  $$$$$$\  
+			\$$$$$$\   \____$$\\_$$  _|  $$ |  $$ | \____$$\ $$  __$$\       $$\$$\$$ $$ | \____$$\ $$  _____|$$  _____| \____$$\ 
+			 \____$$\  $$$$$$$ | $$ |    $$ |  $$ | $$$$$$$ |$$ |  $$ |      $$ \$$$  $$ | $$$$$$$ |\$$$$$$\  \$$$$$$\   $$$$$$$ |
+			$$\   $$ |$$  __$$ | $$ |$$\ $$ |  $$ |$$  __$$ |$$ |  $$ |      $$ |\$  /$$ |$$  __$$ | \____$$\  \____$$\ $$  __$$ |
+			\$$$$$$  |\$$$$$$$ | \$$$$  |\$$$$$$  |\$$$$$$$ |$$ |  $$ |      $$ | \_/ $$ |\$$$$$$$ |$$$$$$$  |$$$$$$$  |\$$$$$$$ |
+			 \______/  \_______|  \____/  \______/  \_______|\__|  \__|      \__|     \__| \_______|\_______/ \_______/  \_______|
+                                                                                                                      
+                                                                                                                      
+                                                                                                                      
+
+	Halo, disini kami akan menjelaskan mengenai satuan masssa. Apa itu satuan masssa? Satuan massa adalah satuan yang digunakan untuk mengukur massa. Massa itu sendiri adalah suatu sifat fisika dari suatu benda yang digunakan untuk menjelaskan berbagai perilaku objek yang terpantau. Dalam kehidupan sehari-hari, massa selalu identik dengan berat. Namun pada kenyataannya, massa dan berat itu berbeda. Berat disebabkan oleh interaksi antara massa dan medan gravitasi bumi. Dalam materi ini, kami akan menjelaskan beberapa satuan masssa beserta cara menghitungnya ya! Mohon dibaca baik-baik :)
+
+1. Kilogram (Kg)
+	Kilogram (kg), adalah satuan unit SI untuk massa. 1 gram didefinisikan sebagai 1/1000 kilogram. Massa kilogram standar ini hampir sama dengan massa 1 liter air. Untuk mengukur suatu berat biasanya kita lebih mengenal kilogram dalam pengukuran. Nah kalian tau ga cara menghitung Kilogram (kg) ke ons?
+ 
+--> Misalnya itu adalah menghitung 6 kg, berapa ons ya? begini cara menghitungnya:
+Untuk menghitung kilogram menuju ons, harus mengkalikan nilai kilogram tersebut dengan 35,274. 
+6kg x 35,274 = 211,644 Ons. 
+---> Nah jadi hasilnya itu 211,644 Ons.
+
+2. Gram (g)
+	Gram (g) adalah unit massa yang termasuk satuan SI (Standar Internasional), disingkat dengan menggunakan simbol “g”. 1 gram adalah sama dengan 1000 miligram lho. Nah untuk mempelajari lebih lanjut mengenai gram ini, sebagai contohnya adalah menghitung gram menuju kilogram. 
+
+--> Misalnya itu adalah menghitung 60 gram, berapa Kilogram ya? begini cara menghitungnya:
+Untuk menghitung gram menuju kilogram, harus membaginya nilai gram tersebut dengan 1000.
+60g : 1000 = 0,06 Kg
+---> Nah jadi hasilnya itu adalah 0,06 Kg. 
+
+3. Miligram (mg)
+	Miligram (mg) adalah satuan ukuran yang sama dengan seperseribu satu gram (g). Biasanya miligram ini digunakan untuk alat laboratorium yang digunakan untuk menimbang massa sejumlah bahan kimia hingga ukuran miligram. Nah untuk mempelajari lebih lanjut mengenai miligram ini, sebagai contohnya adalah menghitung miligram menuju gram.
+
+--> Misalnya itu adalah menghitung 800 miligram, berapa gram ya? begini cara menghitungnya:
+Untuk menghitung miligram menuju gram, harus membaginya nilai miligram tersebut dengan 1000. 
+800mg : 1000 = 0,8 g
+---> Nah jadi hasilnya itu adalah 0,8 g.
+
+4. Mikrogram (mcg)
+	Mikrogram (mcg) adalah satuan ukuran yang sama dengan sepersejuta satu gram (g). Satuan mikrogram biasanya digunakan untuk menghitung massa benda berukuran sangat kecil (micro). Nah untuk mempelajari lebih lanjut mengenai mikrogram ini, sebagai contohnya adalah menghitung mikrogram menuju miligram. 
+
+--> Misalnya itu adalah menghitung 120 mikrogram, berapa miligram ya? begini cara menghitungnya:
+Untuk menghitung mikrogram menuju miligram, harus membaginya nilai mikgram tersebut dengan 1000. 	
+120 : 1000 = 0,12 mg
+---> Nah jadi hasilnya itu adalah 0,12 mg. 
+
+5. Ons 
+	Ons yang telah dikenal di Indonesia merupakan warisan satuan perhitungan berat dari era Kolonial Belanda yang berarti 1 ons setara dengan 100 gram. ons adalah salah satu jenis ukuran yang sangat populer hampir di setiap kalangan masyarakat Indonesia. Satuan ons biasanya digunakan dalam mengukur keperluan di dapur dalam skala kecil. Seperti telur, lalu cabai, bawang merah, dan bahkan sayuran. Sebagai contohnya adalah menghitung ons menuju miligram. 
+
+--> Misalnya itu adalah menghitung 200 ons, berapa gram ya? begini cara menghitungnya:
+Untuk menghitung ons menuju gram, harus mengkalikan nilai gram tersebut dengan 28,35. 	
+200 x 28,35 = 5.669,9 g
+---> Nah jadi hasilnya itu adalah 5.669,9 g.
+
+
+				     <---- Nah kalian bisa juga lho, latihan mengenai konversi ini pada bagian "Quiz" yaa! >.< ----> 
+
+	
+  
