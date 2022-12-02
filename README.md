@@ -1,10 +1,10 @@
 # TugasBesar
 
-Clone this project to local
-\ngit clone github.com/thisisjackii/TugasBesar.git
+Clone this project to local, enter this command into terminal:
+git clone github.com/thisisjackii/TugasBesar.git
 
-Open src folder
-\nd src
+Open src folder:
+cd src
 
-Start the app
-\n/main
+Start the app:
+/main
