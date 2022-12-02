@@ -12,7 +12,11 @@
 int Conversion, Arithmatic, Quiz, cnt, i, bin[32], angka, Riwayat[100]; char tempunit, inisial, longunit, massaunit, timeunit, outunit; 
 
 void header();
+void headerakhir();
 void loadingBar();
+void ketArith();
+void riwayat();
+void hapusriwayat();
 int temprConv(float tempra, char tempraUnit, char tmpOutputUnit);
 void numSys();
 void metricConv(); //longConv()
@@ -21,7 +25,6 @@ void timeCalc(); //timeConv()
 void pilihSuhu(float tempra, char *tempraUnit, char tmpOutputUnit); //Pilih_Suhu()
 void pilihSistemBilangan(); //Pilih_SistemBilangan()
 void pilihMetrik(); //Pilih_Panjang()
-//void pilihMassa(); //Pilih_Massa()
 void pilihWaktu(); //Pilih_Waktu()
 void conversionsMenu(); //konversi()
 void arithmeticsMenu(); //aritmatika()
