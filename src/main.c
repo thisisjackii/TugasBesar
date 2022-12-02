@@ -18,9 +18,6 @@ int main(){
 					case 3:
 						pilihMetrik(&numInput, &theUnit);
 						break;
-//					case 4:
-//						pilihMassa(&angka, &massaunit);
-//						break;
 					case 4:
 						pilihWaktu(&numInput, &theUnit);
 						break;
@@ -30,7 +27,20 @@ int main(){
 				break;
 			case 2:
 				arithmeticsMenu(&numChosen);
-				arithOperator(&x, &oper, &y);
+				switch(numChosen){
+					case 1:
+						arithOperator(&x, &oper, &y);
+						break;
+					case 2:
+						riwayat();
+						break;	
+					case 3:
+						hapusriwayat();
+						break;					
+				    default:
+						printf("\n\n\t\t\t\t\t\t\t\t\t     Wrong input."); 
+						break;
+				}
 				break;
 			case 3: 
 				lessons();
@@ -62,7 +72,6 @@ int main(){
 			prompt = getch();
 		}
 	}while(prompt=='Y'||prompt=='y');
-	header();
-	printf("\n\n\t\t\t\t\t\t\t\t     Thanks for using our software! :)");
+	headerakhir();
 	return 0;
 }
