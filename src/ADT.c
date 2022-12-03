@@ -118,22 +118,22 @@ void pilihSuhu(float tempra, char *tempraUnit, char tmpOutputUnit){
 //	temprConv(tempra, tempraUnit, outputUnit);
 	switch(*tempraUnit){
 		case 'F':
-			tempraA = temprConv(tempra, *tempraUnit, 'C');
-			tempraB = temprConv(tempra, *tempraUnit, 'K');
+			outputUnit = 'C'; tempraA = temprConv(tempra, *tempraUnit, 'C');
+			outputUnit = 'K'; tempraB = temprConv(tempra, *tempraUnit, 'K');
 			break;
 		case 'C':
-			tempraA = temprConv(tempra, *tempraUnit, 'K');
-			tempraB = temprConv(tempra, *tempraUnit, 'F');
+			outputUnit = 'K'; tempraA = temprConv(tempra, *tempraUnit, 'K');
+			outputUnit = 'F'; tempraB = temprConv(tempra, *tempraUnit, 'F');
 			break;
 		case 'K':
-			tempraA = temprConv(tempra, *tempraUnit, 'F');
-			tempraB = temprConv(tempra, *tempraUnit, 'C');
+			outputUnit = 'F'; tempraA = temprConv(tempra, *tempraUnit, 'F');
+			outputUnit = 'C'; tempraB = temprConv(tempra, *tempraUnit, 'C');
 			break;
 		default: break;
 	}
 	printf("\n\t\t\t\t\t\t\t\t\t --> Hasilnya adalah: ");
 //	loadingBar();	
-	printf("\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c", tempraA, tempraB);
+	printf("\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c", tempraA, tempraUnit);
 }
 
 //void temprConv(float *tempra, float* firstRes, float* secondRes, char *tempraUnit, char* firstResUnit, char* secondResUnit){
