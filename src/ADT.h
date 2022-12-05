@@ -8,6 +8,7 @@
 #include <string.h>
 #include <conio.h>
 #include <windows.h>
+#include <unistd.h>
 
 int Conversion, Arithmatic, Quiz, cnt, i, bin[32], angka, Riwayat[100]; char tempunit, inisial, longunit, massaunit, timeunit, outunit; 
 
@@ -17,12 +18,13 @@ void loadingBar();
 void ketArith();
 void riwayat();
 void hapusriwayat();
-int temprConv(float tempra, char tempraUnit, char tmpOutputUnit);
+int temprConv(int* tempra, char* tempraUnit, char* tmpOutputUnit);
 void numSys();
 void metricConv(); //longConv()
 void massConv();
 void timeCalc(); //timeConv()
-void pilihSuhu(float tempra, char *tempraUnit, char tmpOutputUnit); //Pilih_Suhu()
+void convDisplay();
+void pilihSuhu(int tempra, char *tempraUnit, char tmpOutputUnit); //Pilih_Suhu()
 void pilihSistemBilangan(); //Pilih_SistemBilangan()
 void pilihMetrik(); //Pilih_Panjang()
 void pilihWaktu(); //Pilih_Waktu()

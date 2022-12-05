@@ -1,31 +1,84 @@
 #include "ADT.h"
 
 int main(){
-	int numChosen, numInput, QuizChosen; float x, y; char oper, theUnit, expectedUnit, prompt;
+	int numChosen, numInput, result, QuizChosen, banyaknya;
+	float x, y;
+	char oper, theUnit, expectedUnit, prompt; //char namaKonversi[], contohInputKonv[];
 	do{
+		if_you_chose_wrong:
+		system("cls");
+		system("color 0f");
 		header();
 		menuChoice(&numChosen);
 		switch(numChosen){
 			case 1:
+				if_you_chose_wrong_conv:
 				conversionsMenu(&numChosen);
 				switch(numChosen){
 					case 1:
-						pilihSuhu(numInput, &theUnit, expectedUnit);
+						//pilihSuhu(numInput, &theUnit, expectedUnit);
+						banyaknya = 3;
+						char ktrSuhu[3][100] = {
+							"F = Fahrenheit",
+							"C = Celcius", 
+							"K = Kelvin"
+						};
+						convDisplay("Suhu", &banyaknya, &numInput, ktrSuhu, "70 C", &theUnit, &expectedUnit);
+//						printf("\n\n%d %c ke %c\n", numInput, theUnit, expectedUnit);
+//						system("pause");
+						result = temprConv(&numInput, &theUnit, &expectedUnit);
+//						printf("%d", result);
+						if(result == 69){
+							printf("Function is not working! Sorry!");
+						}
 						break;
 					case 2:
-						pilihSistemBilangan(&numInput, &theUnit, &expectedUnit);
+						//pilihSistemBilangan(&numInput, &theUnit, &expectedUnit);
+						banyaknya = 4;
+						char ktrSisBil[4][100] = {
+							"D = Desimal",
+							"B = Biner",
+							"O = Oktal",
+							"H = Heksadesimal"
+						};
+						convDisplay("Sistem Bilangan", &banyaknya, ktrSisBil, "120 D", &theUnit, &expectedUnit);
+						numSys();
 						break;
 					case 3:
-						pilihMetrik(&numInput, &theUnit);
+//						namaKonversi[] = "Metrik";
+						banyaknya = 7;
+						char ktrMetrik[7][100] = {
+							"K = Kilo (k-)",
+							"H = Hekto (h-)",
+							"D = Deka (da-)",
+							"X = (m/g/l)",
+							"d = Desi (d-)",
+							"C = Senti (c-)",
+							"m = Mili (m-)"
+						};
+//						contohInputKonv[] = "85 K";
+						convDisplay("Metrik", &banyaknya, ktrMetrik, "85 K", &theUnit, &expectedUnit);
+						//pilihMetrik(&numInput, &theUnit);
+						metricConv();
 						break;
 					case 4:
-						pilihWaktu(&numInput, &theUnit);
+						banyaknya = 3;
+						char ktrWaktu[3][100] = {
+							"J = jam",
+							"M = menit",
+							"D = detik"
+						};
+						convDisplay("Waktu", &banyaknya, ktrWaktu, "60 M", &theUnit, &expectedUnit);
+						//pilihWaktu(&numInput, &theUnit);
+						timeCalc();
 						break;
 					default:
-						printf("\n\n\t\t\t\t\t\t\t\t\t     Wrong input."); break;
+						printf("\n\n\t\t\t\t\t\t\t\t\t     Wrong input."); sleep(1); 
+						goto if_you_chose_wrong_conv; break;
 				}
 				break;
 			case 2:
+				if_you_chose_wrong_arith:
 				arithmeticsMenu(&numChosen);
 				switch(numChosen){
 					case 1:
@@ -38,14 +91,15 @@ int main(){
 						hapusriwayat();
 						break;					
 				    default:
-						printf("\n\n\t\t\t\t\t\t\t\t\t     Wrong input."); 
-						break;
+						printf("\n\n\t\t\t\t\t\t\t\t\t     Wrong input."); sleep(1);  
+						goto if_you_chose_wrong_arith; break;
 				}
 				break;
 			case 3: 
 				lessons();
 				break;
 			case 4:
+				if_you_chose_wrong_quiz:
 				menuQuiz(&numChosen);
 				switch(numChosen){
 					case 1:
@@ -58,11 +112,13 @@ int main(){
 						quizsulit();
 						break;
 					default:
-						printf("\n\n\t\t\t\t\t\t\t\t\t     Wrong input."); break;
+						printf("\n\n\t\t\t\t\t\t\t\t\t     Wrong input."); sleep(1); 
+						goto if_you_chose_wrong_quiz; break;
 					}
 				break;
 			default:
-				printf("\n\n\t\t\t\t\t\t\t\t\t      Wrong input."); break;
+				printf("\n\n\t\t\t\t\t\t\t\t\t      Wrong input."); sleep(1); 
+				goto if_you_chose_wrong; break;
 		}
 		printf("\n\n\t\t\t\t\t\t\t   The program is done. Would you like to retry? (y/n)");
 		prompt = getch();

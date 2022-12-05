@@ -54,6 +54,35 @@ void loadingBar(){
     }
 }
 
+void riwayat(){
+	FILE *pf;
+	int nilai, a, length = 256;
+	char string[length];
+	
+	system ("cls");
+
+	if ((pf=fopen("RIWAYAT.txt", "a+")) == NULL)
+	{
+		printf("\t\t\t\t\t\t --> File gagal dibuka!\n");
+		exit(1);
+	}
+	printf("\n\n\t\t\t\t\t\t\t\t       --> Isi file Riwayat :\r\n\n");
+	
+	while(fgets(string, length, pf)){
+		a++;
+		
+		printf("\t\t\t\t\t\t\t\t    ==> %d. %s\r", a, string);
+	}
+	fclose(pf); 
+}
+
+void hapusriwayat(){
+	FILE *hapus;
+	
+	hapus = fopen("RIWAYAT.txt", "w");
+	fclose(hapus);
+}
+
 void menuChoice(int* choice){
 //	int columns = strtol(getenv("COLUMNS"), NULL, 10);
 //	int fwidth = strlen("Hello") + (columns - strlen("Hello")) / 2;
@@ -65,20 +94,6 @@ void menuChoice(int* choice){
 	puts	("\t\t\t\t\t\t   |                           4. QUIZ YUK!                          |");
     puts	("\t\t\t\t\t\t   +=================================================================+");
     printf	("\t\t\t\t\t\t\t\t  ---> Pilih menu yang Anda inginkan >> "); scanf("%d", choice);
-//	switch(PilKonf)
-//	{
-//		case 1:
-//			konversi(&Conversion);
-//			break;
-//		case 2:
-//			aritmatika(&Arithmatic);
-//			break;
-//		case 3: 
-//			materi();
-//			break;
-//		default:
-//			printf("Wrong input."); break;
-//	}
 }
 
 //void backMenu(){
@@ -97,78 +112,50 @@ void conversionsMenu(int *choice){
 	puts	("\t\t\t\t\t\t   |                   1. KONVERSI SUHU                             |");
 	puts	("\t\t\t\t\t\t   |                   2. KONVERSI SISTEM BILANGAN                  |");
 	puts	("\t\t\t\t\t\t   |                   3. KONVERSI METRIK                           |");
-//	puts	("\t\t\t\t\t\t   |                   4. KONVERSI MASSA                   	    |");
 	puts	("\t\t\t\t\t\t   |                   4. KONVERSI WAKTU                	    |");
     puts	("\t\t\t\t\t\t   +================================================================+");
     printf	("\t\t\t\t\t\t\t\t Pilih menu yang ingin Anda konversikan >> "); scanf("%d", choice);
 }
 
-void pilihSuhu(float tempra, char *tempraUnit, char tmpOutputUnit){
+void convDisplay(char convName[], int* convTypes, int* inpValue, char ktr[][100], char inpExmpl[], char* inpUnit, char* outUnit){
 	system("cls");
 	header();
-	printf	("\n\t\t\t\t\t\t    <<<<<<<<<<<<<<<  Anda memilih opsi konversi suhu  >>>>>>>>>>>>>>>"); 
-	puts	("\n\n\t\t\t\t\t\t\t  +================== KONVERSI SUHU ==================+");
-	puts	("\t\t\t\t\t\t\t  | ===> Keterangan: F = Fahrenheit                   |");
-	puts	("\t\t\t\t\t\t\t  |                  C = Celcius                      |");
-	puts	("\t\t\t\t\t\t\t  |                  K = Kelvin                       |");	
-	puts	("\t\t\t\t\t\t\t  | ===> Contoh Inputan : 70 C                        |");
-	puts	("\t\t\t\t\t\t\t  +===================================================+");            														
-    printf	("\t\t\t\t\t\t    --> Masukkan besaran suhu beserta satuannya (F, C, K) >> "); scanf("%f %c", &tempra, tempraUnit);
-	float tempraA, tempraB; char outputUnit;
-//	temprConv(tempra, tempraUnit, outputUnit);
-	switch(*tempraUnit){
-		case 'F':
-			outputUnit = 'C'; tempraA = temprConv(tempra, *tempraUnit, 'C');
-			outputUnit = 'K'; tempraB = temprConv(tempra, *tempraUnit, 'K');
-			break;
-		case 'C':
-			outputUnit = 'K'; tempraA = temprConv(tempra, *tempraUnit, 'K');
-			outputUnit = 'F'; tempraB = temprConv(tempra, *tempraUnit, 'F');
-			break;
-		case 'K':
-			outputUnit = 'F'; tempraA = temprConv(tempra, *tempraUnit, 'F');
-			outputUnit = 'C'; tempraB = temprConv(tempra, *tempraUnit, 'C');
-			break;
-		default: break;
+	printf	("\n\t\t\t\t\t\t  <<<<<<<<<<<<<<<  Anda memilih opsi konversi %s  >>>>>>>>>>>>>>>", convName); 
+	printf	("\n\n\t\t\t\t\t\t      +================= KONVERSI %s =================+", convName);		
+	for(int i=0; i<=*convTypes; i++){
+		if(i!=*convTypes){
+			printf("\n\t\t\t\t\t\t      |%s%-23s                   |", ((i==0)? " ===> Keterangan: " : "\t\t\t "), ktr[i]);
+		}else{
+			printf("\n\t\t\t\t\t\t      | ===> Contoh Inputan : %-18s                   |", inpExmpl);
+		}
 	}
-	printf("\n\t\t\t\t\t\t\t\t\t --> Hasilnya adalah: ");
-//	loadingBar();	
-	printf("\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c", tempraA, tempraUnit);
+	printf	("\n\t\t\t\t\t\t      +===================================================+");  
+    printf	("\n\t\t\t\t\t           --> Masukkan besaran beserta satuannya >> ");
+    scanf("%d %c", inpValue, inpUnit);
+    printf("Output yang diharapkan >> "); *outUnit = getch();
+    printf("%d %c to %c", *inpValue, *inpUnit, *outUnit);
 }
 
-//void temprConv(float *tempra, float* firstRes, float* secondRes, char *tempraUnit, char* firstResUnit, char* secondResUnit){
-//	switch(*tempraUnit){
-//		case 'f': case 'F':
-//			*firstRes = (*tempra - 32) / 1.8; *firstResUnit = 'C';
-//			*secondRes = *tempra + 273.15; *secondResUnit = 'K';
-//			break;
-//		case 'k': case 'K':
-//			*firstRes = *tempra - 273.15; *firstResUnit = 'C';
-//			*secondRes = (*tempra * 1.8) + 32; *secondResUnit = 'F';
-//			break;
-//		case 'c': case 'C':
-//			*firstRes = (*tempra * 1.8) + 32; *firstResUnit = 'F';
-//			*secondRes = *tempra + 273.15; *secondResUnit = 'K';
-//			break; 
-//		default:
-//			break;
-//	}
+//void pilihSuhu(int tempra, char *tempraUnit, char *tmpOutputUnit){
+//	tempraOutput = temprConv(tempra, *tempraUnit, *tmpOutputUnit); break;
 //}
 
-int temprConv(float tempra, char tempraUnit, char tmpOutputUnit){
-	switch(tempraUnit){
-		case 'f': case 'F':
-			return ((tmpOutputUnit=='C')? ((tempra - 32) / 1.8) : (tempra + 273.15));
-			break;
-		case 'c': case 'C':
-			return ((tmpOutputUnit=='K')? (tempra + 273.15) : ((tempra * 1.8) + 32));
-			break; 
-		case 'k': case 'K':
-			return ((tmpOutputUnit=='F')? ((tempra * 1.8) + 32) : (tempra - 273.15));
-			break;
-		default:
-			break;
-	}
+int temprConv(int *tempra, char *tempraUnit, char *tmpOutputUnit){
+//	switch(*tempraUnit){
+//		case 'f': case 'F':
+//			return ((*tmpOutputUnit=='C' || *tmpOutputUnit=='c')? ((*tempra - 32) / 1.8) : (*tempra + 273.15));
+//			break;
+//		case 'c': case 'C':
+//			return ((*tmpOutputUnit=='K' || *tmpOutputUnit=='k')? (*tempra + 273.15) : ((*tempra * 1.8) + 32));
+//			break; 
+//		case 'k': case 'K':
+//			return ((*tmpOutputUnit=='F' || *tmpOutputUnit=='f')? ((*tempra * 1.8) + 32) : (*tempra - 273.15));
+//			break;
+//		default:
+//			return 69;
+//			break;
+//	}
+	return 69;
 }
 
 void pilihSistemBilangan(int *inputangka, char *inisialisasi, char *ubahKe){
@@ -294,145 +281,93 @@ void numSys(int *input, char* convertFrom, char* convertTo){
 	}
 }
 
-void pilihMetrik(float *inputangka, char *LongUnit){
-	system("cls");
-	header();
-	printf	("\n\t\t\t\t\t\t  <<<<<<<<<<<<<<<  Anda memilih opsi konversi metrik  >>>>>>>>>>>>>>>"); 
-	puts	("\n\n\t\t\t\t\t\t\t  +================= KONVERSI METRIK =================+");
-	puts	("\t\t\t\t\t\t\t  | ===> Keterangan: K = Kilo  (k-)                   |");
-	puts	("\t\t\t\t\t\t\t  |                  H = Hekto (h-)                   |");
-	puts	("\t\t\t\t\t\t\t  |                  D = Deka  (da-)                  |");
-	puts	("\t\t\t\t\t\t\t  |                  X = (metrik)      (m/g/l)        |");	
-	puts	("\t\t\t\t\t\t\t  |                  d = Desi  (d-)                   |");	
-	puts	("\t\t\t\t\t\t\t  |                  C = Centi (c-)                   |");
-	puts	("\t\t\t\t\t\t\t  |                  m = Mili  (m-)                   |");				
-	puts	("\t\t\t\t\t\t\t  | ===> Contoh Inputan : 85 K                        |");
-	puts	("\t\t\t\t\t\t\t  +===================================================+");  
-    printf	("\t\t\t\t\t           --> Masukkan panjang beserta satuannya (K, H, D, X, d, C, m) >> "); scanf("%f %c", inputangka, LongUnit);
-	float LongA, LongB, LongC, LongD, LongE, LongF; char LongUnitA, LongUnitB, LongUnitC, LongUnitD, LongUnitE, LongUnitF;
-	metricConv(inputangka, &LongA, &LongB, &LongC, &LongD, &LongE, &LongF, LongUnit, &LongUnitA, &LongUnitB, &LongUnitC, &LongUnitD, &LongUnitE, &LongUnitF);
-	printf("\n\t\t\t\t\t\t\t\t\t --> Hasilnya adalah: ");	
-	printf("\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c", LongA, LongUnitA, LongB, LongUnitB, LongC, LongUnitC, LongD, LongUnitD, LongE, LongUnitE, LongF, LongUnitF);
-}
-
-void metricConv(float *inputangka, float* firstRes, float* secondRes, float* thirdRes, float* fourRes, float* fivRes, float* sixRes, char *LongUnit, char* firstResUnit, char* secondResUnit, char* thirdResUnit, char* fourResUnit, char* fivResUnit, char* sixResUnit){
-	switch(*LongUnit){
-		case 'c': case 'C':
-			*firstRes = *inputangka / 100; *firstResUnit = 'X';
-			*secondRes = *inputangka / 100000; *secondResUnit = 'K';
-			*thirdRes = *inputangka * 10; *thirdResUnit = 'm';
-			*fourRes = *inputangka / 1000; *fourResUnit = 'D';
-			*fivRes = *inputangka / 10000; *fivResUnit = 'H';
-			*sixRes = *inputangka / 10; *sixResUnit = 'd';
-			break;
-		case 'x': case 'X': //X adalah meter
-			*firstRes = *inputangka * 100; *firstResUnit = 'C';
-			*secondRes = *inputangka / 1000; *secondResUnit = 'K';
-			*thirdRes = *inputangka * 1000; *thirdResUnit = 'm';
-			*fourRes = *inputangka / 10; *fourResUnit = 'D';			
-			*fivRes = *inputangka / 100; *fivResUnit = 'H';
-			*sixRes = *inputangka * 10; *sixResUnit = 'd';
-			break;
-		case 'k': case 'K':
-			*firstRes = *inputangka * 100000; *firstResUnit = 'C';
-			*secondRes = *inputangka * 1000; *secondResUnit = 'X';
-			*thirdRes = *inputangka * 1000000; *thirdResUnit = 'm';
-			*fourRes = *inputangka * 100; *fourResUnit = 'D';			
-			*fivRes = *inputangka * 10; *fivResUnit = 'H';
-			*sixRes = *inputangka * 10000; *sixResUnit = 'd';
-			break; 
-		case 'm': case 'M':
-			*firstRes = *inputangka / 10; *firstResUnit = 'C';
-			*secondRes = *inputangka / 1000; *secondResUnit = 'X';
-			*thirdRes = *inputangka / 1000000; *thirdResUnit = 'K';
-			*fourRes = *inputangka / 10000; *fourResUnit = 'D';			
-			*fivRes = *inputangka / 100000; *fivResUnit = 'H';
-			*sixRes = *inputangka / 100; *sixResUnit = 'd';
-			break; 
-		case 'D':
-			*firstRes = *inputangka * 1000; *firstResUnit = 'C';
-			*secondRes = *inputangka * 10; *secondResUnit = 'X';
-			*thirdRes = *inputangka / 100; *thirdResUnit = 'K';
-			*fourRes = *inputangka * 10000; *fourResUnit = 'm';			
-			*fivRes = *inputangka / 10; *fivResUnit = 'H';
-			*sixRes = *inputangka * 100; *sixResUnit = 'd';
-			break; 
-		case 'd':
-			*firstRes = *inputangka * 10; *firstResUnit = 'C';
-			*secondRes = *inputangka / 10; *secondResUnit = 'X';
-			*thirdRes = *inputangka / 10000; *thirdResUnit = 'K';
-			*fourRes = *inputangka * 100; *fourResUnit = 'm';			
-			*fivRes = *inputangka / 1000; *fivResUnit = 'H';
-			*sixRes = *inputangka / 100; *sixResUnit = 'D';
-			break; 
-		case 'h': case 'H':
-			*firstRes = *inputangka * 10000; *firstResUnit = 'C';
-			*secondRes = *inputangka * 100; *secondResUnit = 'X';
-			*thirdRes = *inputangka / 10; *thirdResUnit = 'K';
-			*fourRes = *inputangka * 10; *fourResUnit = 'D';			
-			*fivRes = *inputangka * 100000; *fivResUnit = 'm';
-			*sixRes = *inputangka * 1000; *sixResUnit = 'd';
-			break; 
-		default:
-			break;
-	}
-}
-
-//void massaConv(float *inputangka, float* firstRes, float* secondRes, float* thirdRes, float* fourRes, char *MassaUnit, char* firstResUnit, char* secondResUnit, char* thirdResUnit, char* fourResUnit){
-//	switch(*MassaUnit){
+//void metricConv(float *inputangka, float* firstRes, float* secondRes, float* thirdRes, float* fourRes, float* fivRes, float* sixRes, char *LongUnit, char* firstResUnit, char* secondResUnit, char* thirdResUnit, char* fourResUnit, char* fivResUnit, char* sixResUnit){
+//	switch(*LongUnit){
+//		case 'c': case 'C':
+//			*firstRes = *inputangka / 100; *firstResUnit = 'X';
+//			*secondRes = *inputangka / 100000; *secondResUnit = 'K';
+//			*thirdRes = *inputangka * 10; *thirdResUnit = 'm';
+//			*fourRes = *inputangka / 1000; *fourResUnit = 'D';
+//			*fivRes = *inputangka / 10000; *fivResUnit = 'H';
+//			*sixRes = *inputangka / 10; *sixResUnit = 'd';
+//			break;
+//		case 'x': case 'X': //X adalah meter
+//			*firstRes = *inputangka * 100; *firstResUnit = 'C';
+//			*secondRes = *inputangka / 1000; *secondResUnit = 'K';
+//			*thirdRes = *inputangka * 1000; *thirdResUnit = 'm';
+//			*fourRes = *inputangka / 10; *fourResUnit = 'D';			
+//			*fivRes = *inputangka / 100; *fivResUnit = 'H';
+//			*sixRes = *inputangka * 10; *sixResUnit = 'd';
+//			break;
 //		case 'k': case 'K':
-//			*firstRes = *inputangka * 1000; *firstResUnit = 'g';
-//			*secondRes = *inputangka * 1000000; *secondResUnit = 'm';
-//			*thirdRes = *inputangka * 1000000000; *thirdResUnit = 'n';
-//			*fourRes = *inputangka * 35.274; *fourResUnit = 'o';
-//			break;
-//		case 'g': case 'G':
-//			*firstRes = *inputangka / 1000; *firstResUnit = 'k';
-//			*secondRes = *inputangka * 1000; *secondResUnit = 'm';
-//			*thirdRes = *inputangka * 1000000; *thirdResUnit = 'n';
-//			*fourRes = *inputangka / 28.35; *fourResUnit = 'o';
-//			break;
+//			*firstRes = *inputangka * 100000; *firstResUnit = 'C';
+//			*secondRes = *inputangka * 1000; *secondResUnit = 'X';
+//			*thirdRes = *inputangka * 1000000; *thirdResUnit = 'm';
+//			*fourRes = *inputangka * 100; *fourResUnit = 'D';			
+//			*fivRes = *inputangka * 10; *fivResUnit = 'H';
+//			*sixRes = *inputangka * 10000; *sixResUnit = 'd';
+//			break; 
 //		case 'm': case 'M':
-//			*firstRes = *inputangka / 1000000; *firstResUnit = 'k';
-//			*secondRes = *inputangka / 1000; *secondResUnit = 'g';
-//			*thirdRes = *inputangka * 1000; *thirdResUnit = 'n';
-//			*fourRes = *inputangka / 28350; *fourResUnit = 'o';
+//			*firstRes = *inputangka / 10; *firstResUnit = 'C';
+//			*secondRes = *inputangka / 1000; *secondResUnit = 'X';
+//			*thirdRes = *inputangka / 1000000; *thirdResUnit = 'K';
+//			*fourRes = *inputangka / 10000; *fourResUnit = 'D';			
+//			*fivRes = *inputangka / 100000; *fivResUnit = 'H';
+//			*sixRes = *inputangka / 100; *sixResUnit = 'd';
 //			break; 
-//		case 'n': case 'N':
-//			*firstRes = *inputangka / 1000000000; *firstResUnit = 'k';
-//			*secondRes = *inputangka / 1000000; *secondResUnit = 'g';
-//			*thirdRes = *inputangka / 1000; *thirdResUnit = 'm';
-//			*fourRes = *inputangka / 2.8350000000; *fourResUnit = 'o';
+//		case 'D':
+//			*firstRes = *inputangka * 1000; *firstResUnit = 'C';
+//			*secondRes = *inputangka * 10; *secondResUnit = 'X';
+//			*thirdRes = *inputangka / 100; *thirdResUnit = 'K';
+//			*fourRes = *inputangka * 10000; *fourResUnit = 'm';			
+//			*fivRes = *inputangka / 10; *fivResUnit = 'H';
+//			*sixRes = *inputangka * 100; *sixResUnit = 'd';
 //			break; 
-//		case 'o': case 'O':
-//			*firstRes = *inputangka / 35.274; *firstResUnit = 'k';
-//			*secondRes = *inputangka * 28.35; *secondResUnit = 'g';
-//			*thirdRes = *inputangka * 28350; *thirdResUnit = 'm';
-//			*fourRes = *inputangka * 2.8350000000; *fourResUnit = 'n';
+//		case 'd':
+//			*firstRes = *inputangka * 10; *firstResUnit = 'C';
+//			*secondRes = *inputangka / 10; *secondResUnit = 'X';
+//			*thirdRes = *inputangka / 10000; *thirdResUnit = 'K';
+//			*fourRes = *inputangka * 100; *fourResUnit = 'm';			
+//			*fivRes = *inputangka / 1000; *fivResUnit = 'H';
+//			*sixRes = *inputangka / 100; *sixResUnit = 'D';
+//			break; 
+//		case 'h': case 'H':
+//			*firstRes = *inputangka * 10000; *firstResUnit = 'C';
+//			*secondRes = *inputangka * 100; *secondResUnit = 'X';
+//			*thirdRes = *inputangka / 10; *thirdResUnit = 'K';
+//			*fourRes = *inputangka * 10; *fourResUnit = 'D';			
+//			*fivRes = *inputangka * 100000; *fivResUnit = 'm';
+//			*sixRes = *inputangka * 1000; *sixResUnit = 'd';
 //			break; 
 //		default:
 //			break;
 //	}
 //}
 
-//void pilihMassa(float *inputangka, char *MassaUnit){
-//	system("cls");
-//	header();
-//	printf	("\n\t\t\t\t\t\t    <<<<<<<<<<<<<<<  Anda memilih opsi konversi massa  >>>>>>>>>>>>>>>"); 
-//	puts	("\n\n\t\t\t\t\t\t\t  +================== KONVERSI MASSA =================+");
-//	puts	("\t\t\t\t\t\t\t  | ===> Keterangan: K = Kilogram  (kg)               |");
-//	puts	("\t\t\t\t\t\t\t  |                  G = Gram      (g)                |");
-//	puts	("\t\t\t\t\t\t\t  |                  M = Miligram  (mg)               |");
-//	puts	("\t\t\t\t\t\t\t  |                  N = Mikrogram (mcg)              |");	
-//	puts	("\t\t\t\t\t\t\t  |                  O = Ons                          |");	
-//	puts	("\t\t\t\t\t\t\t  | ===> Contoh Inputan : 90 O                        |");
-//	puts	("\t\t\t\t\t\t\t  +===================================================+");  
-//    printf	("\t\t\t\t\t              --> Masukkan massa beserta satuannya (K, G, M, N, O) >> "); scanf("%f %c", inputangka, MassaUnit);
-//	float MassaA, MassaB, MassaC, MassaD; char MassaUnitA, MassaUnitB, MassaUnitC, MassaUnitD;
-//	massaConv(inputangka, &MassaA, &MassaB, &MassaC, &MassaD, MassaUnit, &MassaUnitA, &MassaUnitB, &MassaUnitC, &MassaUnitD);
-//	printf("\n\t\t\t\t\t\t\t\t\t --> Hasilnya adalah: ");	
-//	printf("\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c", MassaA, MassaUnitA, MassaB, MassaUnitB, MassaC, MassaUnitC, MassaD, MassaUnitD);
-//}
+void metricConv(){
+	char metric[] = {'K', 'H', 'D', 'x', 'd', 'C','M'}, inp, outInp, msr; int iter; // iter = 1000000;
+//	printf("Ukuran? (bilangan dan satuannya) ");
+//	scanf("%d %c", &iter, &inp);
+//	printf("Ubah ke satuan apa? ");
+	scanf(" %c", &outInp);
+	for(int i=0; i<7; i++){
+		if(inp!=metric[i]){
+			iter = iter / 10;
+			printf("\ni Iter %d = %d", i+1, iter);
+		}else{
+			for(int j=0; j<7; j++){
+				if(outInp!=metric[j]){
+					iter = iter * 10;
+					printf("\nj Iter %d = %d", j+1, iter);
+				}else{
+					break;
+				}
+			}
+			break;
+		}
+	}
+	printf("\n%d %c", iter, outInp);
+}
 
 void pilihWaktu(float *inputangka, char *WaktuUnit){
 	header();
@@ -867,9 +802,9 @@ void quizsedang(){
 	} else {
 		printf	("\n\t\t\t\t\t   ---> Nilai Anda tidak sempurna ;(, Jangan menyerah! Ayo coba lagi Quiznya! <---");
 	}
- }
+}
  
- void quizsulit(){
+void quizsulit(){
 	char questions[][100] = {"1. 1 km + 1000 hm + 123 cm = __ hm                 ",
 							 "2. 1000 mm + 3 m - 340 cm =__ mm                   ",
 							 "3. 90 Celcius berapa Fahrenheit?                   ",
@@ -982,4 +917,24 @@ void quizsedang(){
 	} else {
 		printf	("\n\t\t\t\t\t   ---> Nilai Anda tidak sempurna ;(, Jangan menyerah! Ayo coba lagi Quiznya! <---");
 	}
- }
+}
+
+void headerakhir(){				// ====> HEADER AKHIR KALKULATOR ILMIAH! <==== //
+	system("cls");
+	printf	("\n\n\n\n\n\n\n\n\n\n\n\n\t\t++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+	printf  ("\t\t     _____________________  \n");
+	printf  ("\t\t    |  _________________  | \n");
+	printf  ("\t\t    | |   AGAM & JACK   | | \n");
+	printf  ("\t\t    | |_________________| |  $$$$$$$$\\                  $$\\                               $$\\   $$\\                    $$\\ $$\\         \n");
+	printf  ("\t\t    |  ___ ___ ___   ___  |  \\__$$  __|                 \\__|                              $$ | $$  |                   \\__|$$ |       \n");
+	printf  ("\t\t    | | 7 | 8 | 9 | | + | |     $$ | $$$$$$\\   $$$$$$\\  $$\\ $$$$$$\\$$$$\\   $$$$$$\\        $$ |$$  / $$$$$$\\   $$$$$$$\\ $$\\ $$$$$$$\\     \n");
+	printf  ("\t\t    | |___|___|___| |___| |     $$ |$$  __$$\\ $$  __$$\\ $$ |$$  _$$  _$$\\  \\____$$\\       $$$$$  /  \\____$$\\ $$  _____|$$ |$$  __$$\\     \n");
+	printf  ("\t\t    | | 4 | 5 | 6 | | - | |     $$ |$$$$$$$$ |$$ |  \\__|$$ |$$ / $$ / $$ | $$$$$$$ |      $$  $$<   $$$$$$$ |\\$$$$$$\\  $$ |$$ |  $$ |  \n");
+	printf  ("\t\t    | |___|___|___| |___| |     $$ |$$   ____|$$ |      $$ |$$ | $$ | $$ |$$  __$$ |      $$ |\\$$\\ $$  __$$ |\\\\____$$\\ $$ |$$ |  $$ |  \n");
+	printf  ("\t\t    | | 1 | 2 | 3 | | x | |     $$ |\\$$$$$$$\\ $$ |      $$ |$$ | $$ | $$ |\\$$$$$$$ |      $$ | \\$$\\$$$$$$$  |$$$$$$$  |$$ |$$ |  $$ |  \n");
+	printf  ("\t\t    | |___|___|___| |___| |     \\__| \\_______|\\__|      \\__|\\__| \\__| \\__| \\_______|      \\__|  \\__|\\_______|\\_______/ \\__|\\__|  \\__|   \n");
+	printf  ("\t\t    | | . | 0 | = | | / | | \n");
+	printf  ("\t\t    | |___|___|___| |___| | \n");
+	printf  ("\t\t    |_____________________| \n\n");
+	printf	("\t\t+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+}
