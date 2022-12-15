@@ -4,10 +4,10 @@ int main(){
 	int numChosen, numInput, QuizChosen; float x, y; char oper, theUnit, expectedUnit, prompt;
 	do{
 		header();
-		menuChoice(&numChosen);
+		menuChoice(&numChosen, "KONFIGURASI KONVERSI", "KONFIGURASI ARITMATIKA", "MATERI KONFIGURASI KONVERSI", "QUIZ YUK!");
 		switch(numChosen){
 			case 1:
-				conversionsMenu(&numChosen);
+				conversionsMenu(&numChosen, "KONVERSI SUHU", "KONVERSI SISTEM BILANGAN", "KONVERSI METRIK", "KONVERSI WAKTU");
 				switch(numChosen){
 					case 1:
 						pilihSuhu(numInput, &theUnit, expectedUnit);
@@ -18,9 +18,6 @@ int main(){
 					case 3:
 						pilihMetrik(&numInput, &theUnit);
 						break;
-//					case 4:
-//						pilihMassa(&angka, &massaunit);
-//						break;
 					case 4:
 						pilihWaktu(&numInput, &theUnit);
 						break;
@@ -29,23 +26,36 @@ int main(){
 				}
 				break;
 			case 2:
-				arithmeticsMenu(&numChosen);
-				arithOperator(&x, &oper, &y);
+				arithmeticsMenu(&numChosen, "KALKULATOR", "RIWAYAT KALKULATOR", "MENGHAPUS RIWAYAT KALKULATOR");
+				switch(numChosen){
+					case 1:
+						arithOperator(&x, &oper, &y);
+						break;
+					case 2:
+						riwayat();
+						break;	
+					case 3:
+						hapusriwayat();
+						break;					
+				    default:
+						printf("\n\n\t\t\t\t\t\t\t\t\t     Wrong input."); 
+						break;
+				}
 				break;
 			case 3: 
 				lessons();
 				break;
 			case 4:
-				menuQuiz(&numChosen);
+				menuQuiz(&numChosen, "MUDAH", "SEDANG", "SULIT");
 				switch(numChosen){
 					case 1:
-						quizmudah();
+						quizmudah("Jawaban Anda", "Pilihan Anda", "BENAR!", "SALAH :(");
 						break;
 					case 2:
-						quizsedang();
+						quizsedang("Jawaban Anda", "Pilihan Anda", "BENAR!", "SALAH :(");
 						break;
 					case 3:
-						quizsulit();
+						quizsulit("Jawaban Anda", "Pilihan Anda", "BENAR!", "SALAH :(");
 						break;
 					default:
 						printf("\n\n\t\t\t\t\t\t\t\t\t     Wrong input."); break;
@@ -62,7 +72,6 @@ int main(){
 			prompt = getch();
 		}
 	}while(prompt=='Y'||prompt=='y');
-	header();
-	printf("\n\n\t\t\t\t\t\t\t\t     Thanks for using our software! :)");
+	headerakhir();
 	return 0;
 }

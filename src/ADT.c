@@ -1,5 +1,7 @@
 #include "ADT.h"
 
+int score, numberOfQuestions; 
+
 void header(){				// ====> HEADER KALKULATOR ILMIAH! <==== //
 	system("cls");
 	printf	("\t\t++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
@@ -20,14 +22,52 @@ void header(){				// ====> HEADER KALKULATOR ILMIAH! <==== //
 	printf	("\t\t+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
 }
 
-// Function to creating loading bar
+void headerakhir(){				// ====> HEADER AKHIR KALKULATOR ILMIAH! <==== //
+	system("cls");
+	printf	("\n\n\n\n\n\n\n\n\n\n\n\n\t\t++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+	printf  ("\t\t     _____________________  \n");
+	printf  ("\t\t    |  _________________  | \n");
+	printf  ("\t\t    | |   AGAM & JACK   | | \n");
+	printf  ("\t\t    | |_________________| |  $$$$$$$$\\                  $$\\                               $$\\   $$\\                    $$\\ $$\\         \n");
+	printf  ("\t\t    |  ___ ___ ___   ___  |  \\__$$  __|                 \\__|                              $$ | $$  |                   \\__|$$ |       \n");
+	printf  ("\t\t    | | 7 | 8 | 9 | | + | |     $$ | $$$$$$\\   $$$$$$\\  $$\\ $$$$$$\\$$$$\\   $$$$$$\\        $$ |$$  / $$$$$$\\   $$$$$$$\\ $$\\ $$$$$$$\\     \n");
+	printf  ("\t\t    | |___|___|___| |___| |     $$ |$$  __$$\\ $$  __$$\\ $$ |$$  _$$  _$$\\  \\____$$\\       $$$$$  /  \\____$$\\ $$  _____|$$ |$$  __$$\\     \n");
+	printf  ("\t\t    | | 4 | 5 | 6 | | - | |     $$ |$$$$$$$$ |$$ |  \\__|$$ |$$ / $$ / $$ | $$$$$$$ |      $$  $$<   $$$$$$$ |\\$$$$$$\\  $$ |$$ |  $$ |  \n");
+	printf  ("\t\t    | |___|___|___| |___| |     $$ |$$   ____|$$ |      $$ |$$ | $$ | $$ |$$  __$$ |      $$ |\\$$\\ $$  __$$ |\\\\____$$\\ $$ |$$ |  $$ |  \n");
+	printf  ("\t\t    | | 1 | 2 | 3 | | x | |     $$ |\\$$$$$$$\\ $$ |      $$ |$$ | $$ | $$ |\\$$$$$$$ |      $$ | \\$$\\$$$$$$$  |$$$$$$$  |$$ |$$ |  $$ |  \n");
+	printf  ("\t\t    | |___|___|___| |___| |     \\__| \\_______|\\__|      \\__|\\__| \\__| \\__| \\_______|      \\__|  \\__|\\_______|\\_______/ \\__|\\__|  \\__|   \n");
+	printf  ("\t\t    | | . | 0 | = | | / | | \n");
+	printf  ("\t\t    | |___|___|___| |___| | \n");
+	printf  ("\t\t    |_____________________| \n\n");
+	printf	("\t\t+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+}
+
+void tampilanilai()
+{
+	printf	("\n\n\n\t\t\t\t\t\t        __| |____________________________________________| |__  \n");
+	printf	("\t\t\t\t\t\t       (__   ____________________________________________   __) \n");
+	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
+	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
+	printf	("\t\t\t\t\t\t          | |           NILAI ANDA ADALAH: %d/%d          | |     \n", score, numberOfQuestions);
+	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
+	printf	("\t\t\t\t\t\t        __| |____________________________________________| |__  \n");
+	printf	("\t\t\t\t\t\t       (__   ____________________________________________   __) \n");
+	printf	("\t\t\t\t\t\t          | |                                            | |    \n"); 
+}
+
+void ketnilai()
+{
+	if (score >= 8 && score <= 10){
+		printf	("\n\t\t\t\t\t\t\t---> Anda mendapatkan nilai yang sempurna! Selamat! <---");
+	} else if(score >= 5 && score < 8){
+		printf	("\n\t\t\t\t\t\t    ---> Nilai Anda kurang sempurna :(, Ayo coba lagi Quiznya! <---");
+	} else {
+		printf	("\n\t\t\t\t\t   ---> Nilai Anda tidak sempurna ;(, Jangan menyerah! Ayo coba lagi Quiznya! <---");
+	}
+}
+
 void loadingBar(){
-    // 0 - black background,
-    // A - Green Foreground
     system("color F0");
-  
-    // Initialize char for printing
-    // loading bar
     char a = 177, b = 219;
 	
 	system ("cls");
@@ -36,69 +76,108 @@ void loadingBar(){
     printf("\n\n\n\n\t\t\t\t\t\t\t\t\t         Loading...\n\n");
     printf("\t\t\t\t\t\t\t\t\t");
   
-    // Print initial loading bar
     for (int i = 0; i < 26; i++)
         printf("%c", a);
   
-    // Set the cursor again starting
-    // point of loading bar
+
     printf("\r");
     printf("\t\t\t\t\t\t\t\t\t");
   
-    // Print loading bar progress
     for (int i = 0; i < 26; i++) {
         printf("%c", b);
   
-        // Sleep for 1 second
         Sleep(50);
     }
 }
 
-void menuChoice(int* choice){
-//	int columns = strtol(getenv("COLUMNS"), NULL, 10);
-//	int fwidth = strlen("Hello") + (columns - strlen("Hello")) / 2;
-//	printf("%*s\n", fwidth, "Hello");
-	puts	("\n\n\t\t\t\t\t\t   +======================  PILIH KONFIGURASI  ======================+");
-	puts	("\t\t\t\t\t\t   |                     1. KONFIGURASI KONVERSI                     |");
-	puts	("\t\t\t\t\t\t   |                    2. KONFIGURASI ARITMATIKA                    |");
-	puts	("\t\t\t\t\t\t   |                  3. MATERI KONFIGURASI KONVERSI                 |");
-	puts	("\t\t\t\t\t\t   |                           4. QUIZ YUK!                          |");
-    puts	("\t\t\t\t\t\t   +=================================================================+");
-    printf	("\t\t\t\t\t\t\t\t  ---> Pilih menu yang Anda inginkan >> "); scanf("%d", choice);
-//	switch(PilKonf)
-//	{
-//		case 1:
-//			konversi(&Conversion);
-//			break;
-//		case 2:
-//			aritmatika(&Arithmatic);
-//			break;
-//		case 3: 
-//			materi();
-//			break;
-//		default:
-//			printf("Wrong input."); break;
-//	}
+void riwayat()
+{
+	FILE *pf;
+	int nilai, a, length = 256;
+	char string[length];
+	
+	system ("cls");
+
+	if ((pf=fopen("RIWAYAT.txt", "a+")) == NULL)
+	{
+		printf("\t\t\t\t\t\t --> File gagal dibuka!\n");
+		exit(1);
+	}
+	printf("\n\n\t\t\t\t\t\t\t\t       --> Isi file Riwayat :\r\n\n");
+	
+	while(fgets(string, length, pf)){
+		a++;
+		
+		printf("\t\t\t\t\t\t\t\t    ==> %d. %s\r", a, string);
+	}
+	fclose(pf); 
 }
 
-//void backMenu(){
-//	int choice;
-//	printf("\n\n\n\t\t\t\t\t\tPress ESC to go back home.");
-//	if (getch()==27){
-//		menuChoice(&choice);
-//	}
+void hapusriwayat(){
+	FILE *hapus;
+	
+	hapus = fopen("RIWAYAT.txt", "w");
+	fclose(hapus);
+}
+
+//void menuChoice(int* choice){
+//	puts	("\n\n\t\t\t\t\t\t    +==========================  PILIH MENU  =========================+");
+//    puts	("\t\t\t\t\t\t    |-----------------------------------------------------------------|");
+//	puts	("\t\t\t\t\t\t    |                     1. KONFIGURASI KONVERSI                     |");
+//    puts	("\t\t\t\t\t\t    |-----------------------------------------------------------------|");
+//	puts	("\t\t\t\t\t\t    |                    2. KONFIGURASI ARITMATIKA                    |");
+//    puts	("\t\t\t\t\t\t    |-----------------------------------------------------------------|");
+//	puts	("\t\t\t\t\t\t    |                  3. MATERI KONFIGURASI KONVERSI                 |");
+//    puts	("\t\t\t\t\t\t    |-----------------------------------------------------------------|");
+//	puts	("\t\t\t\t\t\t    |                           4. QUIZ YUK!                          |");
+//    puts	("\t\t\t\t\t\t    +=================================================================+");
+//    printf	("\t\t\t\t\t\t\t\t   ---> Pilih menu yang Anda inginkan >> "); scanf("%d", choice);
 //}
 
-void conversionsMenu(int *choice){
+void menuChoice(int* choice, char no1[30], char no2[30], char no3[30], char no4[30]){
+	puts	("\n\n\t\t\t\t\t\t    +==========================  PILIH MENU  =========================+");
+    puts	("\t\t\t\t\t\t    |-----------------------------------------------------------------|");
+	printf	("\t\t\t\t\t\t    |                     1. %s                     | \n", no1);
+    puts	("\t\t\t\t\t\t    |-----------------------------------------------------------------|");
+	printf	("\t\t\t\t\t\t    |                    2. %s                    | \n", no2);
+    puts	("\t\t\t\t\t\t    |-----------------------------------------------------------------|");
+	printf	("\t\t\t\t\t\t    |                  3. %s                 | \n", no3);
+    puts	("\t\t\t\t\t\t    |-----------------------------------------------------------------|");
+	printf	("\t\t\t\t\t\t    |                           4. %s                          | \n", no4);
+    puts	("\t\t\t\t\t\t    +=================================================================+");
+    printf	("\t\t\t\t\t\t\t\t   ---> Pilih menu yang Anda inginkan >> "); scanf("%d", choice);
+}
+
+//void conversionsMenu(int *choice){
+//	system ("cls");
+//	header();
+//	printf	("\n\t\t\t\t\t\t     <<<<<<<<<<<<<<<<<<<   Anda memilih opsi 1  >>>>>>>>>>>>>>>>>>>"); 
+//	puts	("\n\n\t\t\t\t\t\t   +================== PILIH KONFIGURASI KONVERSI ==================+");
+//    puts	("\t\t\t\t\t\t   |----------------------------------------------------------------|");
+//	puts	("\t\t\t\t\t\t   |                   1. KONVERSI SUHU                             |");
+//    puts	("\t\t\t\t\t\t   |----------------------------------------------------------------|");
+//	puts	("\t\t\t\t\t\t   |                   2. KONVERSI SISTEM BILANGAN                  |");
+//    puts	("\t\t\t\t\t\t   |----------------------------------------------------------------|");
+//	puts	("\t\t\t\t\t\t   |                   3. KONVERSI METRIK                           |");
+//    puts	("\t\t\t\t\t\t   |----------------------------------------------------------------|");
+//	puts	("\t\t\t\t\t\t   |                   4. KONVERSI WAKTU                	    |");
+//    puts	("\t\t\t\t\t\t   +================================================================+");
+//    printf	("\t\t\t\t\t\t\t\t Pilih menu yang ingin Anda konversikan >> "); scanf("%d", choice);
+//}
+
+void conversionsMenu(int *choice, char no1[30], char no2[30], char no3[30], char no4[30]){
 	system ("cls");
 	header();
 	printf	("\n\t\t\t\t\t\t     <<<<<<<<<<<<<<<<<<<   Anda memilih opsi 1  >>>>>>>>>>>>>>>>>>>"); 
 	puts	("\n\n\t\t\t\t\t\t   +================== PILIH KONFIGURASI KONVERSI ==================+");
-	puts	("\t\t\t\t\t\t   |                   1. KONVERSI SUHU                             |");
-	puts	("\t\t\t\t\t\t   |                   2. KONVERSI SISTEM BILANGAN                  |");
-	puts	("\t\t\t\t\t\t   |                   3. KONVERSI METRIK                           |");
-//	puts	("\t\t\t\t\t\t   |                   4. KONVERSI MASSA                   	    |");
-	puts	("\t\t\t\t\t\t   |                   4. KONVERSI WAKTU                	    |");
+    puts	("\t\t\t\t\t\t   |----------------------------------------------------------------|");
+	printf	("\t\t\t\t\t\t   |                   1. %s                             | \n", no1);
+    puts	("\t\t\t\t\t\t   |----------------------------------------------------------------|");
+	printf	("\t\t\t\t\t\t   |                   2. %s                  | \n", no2);
+    puts	("\t\t\t\t\t\t   |----------------------------------------------------------------|");
+	printf	("\t\t\t\t\t\t   |                   3. %s                           | \n", no3);
+    puts	("\t\t\t\t\t\t   |----------------------------------------------------------------|");
+	printf	("\t\t\t\t\t\t   |                   4. %s                	    | \n", no4);
     puts	("\t\t\t\t\t\t   +================================================================+");
     printf	("\t\t\t\t\t\t\t\t Pilih menu yang ingin Anda konversikan >> "); scanf("%d", choice);
 }
@@ -115,7 +194,7 @@ void pilihSuhu(float tempra, char *tempraUnit, char tmpOutputUnit){
 	puts	("\t\t\t\t\t\t\t  +===================================================+");            														
     printf	("\t\t\t\t\t\t    --> Masukkan besaran suhu beserta satuannya (F, C, K) >> "); scanf("%f %c", &tempra, tempraUnit);
 	float tempraA, tempraB; char outputUnit;
-//	temprConv(tempra, tempraUnit, outputUnit);
+
 	switch(*tempraUnit){
 		case 'F':
 			tempraA = temprConv(tempra, *tempraUnit, 'C');
@@ -132,28 +211,9 @@ void pilihSuhu(float tempra, char *tempraUnit, char tmpOutputUnit){
 		default: break;
 	}
 	printf("\n\t\t\t\t\t\t\t\t\t --> Hasilnya adalah: ");
-//	loadingBar();	
 	printf("\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c", tempraA, tempraB);
 }
 
-//void temprConv(float *tempra, float* firstRes, float* secondRes, char *tempraUnit, char* firstResUnit, char* secondResUnit){
-//	switch(*tempraUnit){
-//		case 'f': case 'F':
-//			*firstRes = (*tempra - 32) / 1.8; *firstResUnit = 'C';
-//			*secondRes = *tempra + 273.15; *secondResUnit = 'K';
-//			break;
-//		case 'k': case 'K':
-//			*firstRes = *tempra - 273.15; *firstResUnit = 'C';
-//			*secondRes = (*tempra * 1.8) + 32; *secondResUnit = 'F';
-//			break;
-//		case 'c': case 'C':
-//			*firstRes = (*tempra * 1.8) + 32; *firstResUnit = 'F';
-//			*secondRes = *tempra + 273.15; *secondResUnit = 'K';
-//			break; 
-//		default:
-//			break;
-//	}
-//}
 
 int temprConv(float tempra, char tempraUnit, char tmpOutputUnit){
 	switch(tempraUnit){
@@ -184,16 +244,12 @@ void pilihSistemBilangan(int *inputangka, char *inisialisasi, char *ubahKe){
 	puts	("\t\t\t\t\t\t\t  | ===> Contoh Inputan : 30 D                        |");
 	puts	("\t\t\t\t\t\t\t  +===================================================+");  
     printf	("\t\t\t\t\t\t      --> Masukkan angkanya dan inisialisasinya (D, B, O, H) >> ");
-//	backMenu();
 	scanf("%d %c", inputangka, inisialisasi);
     printf  ("\t\t\t\t\t\t      --> Input anda >> %d %c", *inputangka, *inisialisasi);
     printf  ("\n\t\t\t\t\t\t      --> Konversi ke-? (D, B, O, H) >> "); *ubahKe = getch();
     printf  ("\n\t\t\t\t\t\t      --> Konversi ke-? (D, B, O, H) >> %c", *ubahKe);
-//	int angka1, angka2, angka3; char inisialA, inisialB, inisialC;
-//	systemConv(inputangka, &angka1, &angka2, &angka3, inisialisasi, &inisialA, &inisialB, &inisialC);
+
 	numSys(inputangka, inisialisasi, ubahKe);
-//	printf("\n\t\t\t\t\t\t\t\t\t --> Hasilnya adalah: ");	
-//	printf("\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c",angka1, inisialA, angka2, inisialB, angka3, inisialC);
 }
 
 void numSys(int *input, char* convertFrom, char* convertTo){
@@ -202,26 +258,8 @@ void numSys(int *input, char* convertFrom, char* convertTo){
 		case 'D':
 			cnt=0;
 			while(*input>0){
-//				if(*convertTo == 'H'){
-//					divisor = 16;
-//					hex[cnt] = *input%divisor + ((*input%divisor>9)? 55 : 0x30);
-//				}else{
-//					if((divisor = ((*convertTo == 'B')? 2 : 8)) == 2){
-//						bin[cnt] = *input%divisor;
-//					}else{
-//						oct[cnt] = *input%divisor;
-//					}
-//				}
 				switch(*convertTo){
 					case 'H': case 'h':
-//						divisor = 16;
-//						if(*input%divisor>9 && *input%divisor<16){
-//							hex[cnt] = *input%divisor + 55;
-//						}else{
-//							hex[cnt] = *input%divisor + 0x30;
-//						}
-//						hex[cnt] = *input%divisor + ((*input%divisor>9)? 55 : 0x30);
-						
 						switch (*input % 16) {
 					        case 10:
 					            hex[cnt] = 'A';
@@ -242,9 +280,8 @@ void numSys(int *input, char* convertFrom, char* convertTo){
 					            hex[cnt] = 'F';
 					            break;
 					        default:
-					            hex[cnt] = (*input % 16) + 0x30; break; /*converted into char value*/
+					            hex[cnt] = (*input % 16) + 0x30; break; 
 					    }
-//						hex[cnt] = number%16 + ((number%16>9)? 55 : 0x30);
 						break;
 					case 'O': case 'o':
 						divisor = 8;
@@ -258,7 +295,6 @@ void numSys(int *input, char* convertFrom, char* convertTo){
 						printf("\n\n\t\t\t\t\t\t\t\t\t     Wrong input.");
 						break;
 				}
-		//		arr[cnt]=*input%divisor;
 				*input=*input/divisor;
 				cnt++;
 			}
@@ -325,7 +361,7 @@ void metricConv(float *inputangka, float* firstRes, float* secondRes, float* thi
 			*fivRes = *inputangka / 10000; *fivResUnit = 'H';
 			*sixRes = *inputangka / 10; *sixResUnit = 'd';
 			break;
-		case 'x': case 'X': //X adalah meter
+		case 'x': case 'X': 
 			*firstRes = *inputangka * 100; *firstResUnit = 'C';
 			*secondRes = *inputangka / 1000; *secondResUnit = 'K';
 			*thirdRes = *inputangka * 1000; *thirdResUnit = 'm';
@@ -377,62 +413,6 @@ void metricConv(float *inputangka, float* firstRes, float* secondRes, float* thi
 			break;
 	}
 }
-
-//void massaConv(float *inputangka, float* firstRes, float* secondRes, float* thirdRes, float* fourRes, char *MassaUnit, char* firstResUnit, char* secondResUnit, char* thirdResUnit, char* fourResUnit){
-//	switch(*MassaUnit){
-//		case 'k': case 'K':
-//			*firstRes = *inputangka * 1000; *firstResUnit = 'g';
-//			*secondRes = *inputangka * 1000000; *secondResUnit = 'm';
-//			*thirdRes = *inputangka * 1000000000; *thirdResUnit = 'n';
-//			*fourRes = *inputangka * 35.274; *fourResUnit = 'o';
-//			break;
-//		case 'g': case 'G':
-//			*firstRes = *inputangka / 1000; *firstResUnit = 'k';
-//			*secondRes = *inputangka * 1000; *secondResUnit = 'm';
-//			*thirdRes = *inputangka * 1000000; *thirdResUnit = 'n';
-//			*fourRes = *inputangka / 28.35; *fourResUnit = 'o';
-//			break;
-//		case 'm': case 'M':
-//			*firstRes = *inputangka / 1000000; *firstResUnit = 'k';
-//			*secondRes = *inputangka / 1000; *secondResUnit = 'g';
-//			*thirdRes = *inputangka * 1000; *thirdResUnit = 'n';
-//			*fourRes = *inputangka / 28350; *fourResUnit = 'o';
-//			break; 
-//		case 'n': case 'N':
-//			*firstRes = *inputangka / 1000000000; *firstResUnit = 'k';
-//			*secondRes = *inputangka / 1000000; *secondResUnit = 'g';
-//			*thirdRes = *inputangka / 1000; *thirdResUnit = 'm';
-//			*fourRes = *inputangka / 2.8350000000; *fourResUnit = 'o';
-//			break; 
-//		case 'o': case 'O':
-//			*firstRes = *inputangka / 35.274; *firstResUnit = 'k';
-//			*secondRes = *inputangka * 28.35; *secondResUnit = 'g';
-//			*thirdRes = *inputangka * 28350; *thirdResUnit = 'm';
-//			*fourRes = *inputangka * 2.8350000000; *fourResUnit = 'n';
-//			break; 
-//		default:
-//			break;
-//	}
-//}
-
-//void pilihMassa(float *inputangka, char *MassaUnit){
-//	system("cls");
-//	header();
-//	printf	("\n\t\t\t\t\t\t    <<<<<<<<<<<<<<<  Anda memilih opsi konversi massa  >>>>>>>>>>>>>>>"); 
-//	puts	("\n\n\t\t\t\t\t\t\t  +================== KONVERSI MASSA =================+");
-//	puts	("\t\t\t\t\t\t\t  | ===> Keterangan: K = Kilogram  (kg)               |");
-//	puts	("\t\t\t\t\t\t\t  |                  G = Gram      (g)                |");
-//	puts	("\t\t\t\t\t\t\t  |                  M = Miligram  (mg)               |");
-//	puts	("\t\t\t\t\t\t\t  |                  N = Mikrogram (mcg)              |");	
-//	puts	("\t\t\t\t\t\t\t  |                  O = Ons                          |");	
-//	puts	("\t\t\t\t\t\t\t  | ===> Contoh Inputan : 90 O                        |");
-//	puts	("\t\t\t\t\t\t\t  +===================================================+");  
-//    printf	("\t\t\t\t\t              --> Masukkan massa beserta satuannya (K, G, M, N, O) >> "); scanf("%f %c", inputangka, MassaUnit);
-//	float MassaA, MassaB, MassaC, MassaD; char MassaUnitA, MassaUnitB, MassaUnitC, MassaUnitD;
-//	massaConv(inputangka, &MassaA, &MassaB, &MassaC, &MassaD, MassaUnit, &MassaUnitA, &MassaUnitB, &MassaUnitC, &MassaUnitD);
-//	printf("\n\t\t\t\t\t\t\t\t\t --> Hasilnya adalah: ");	
-//	printf("\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c", MassaA, MassaUnitA, MassaB, MassaUnitB, MassaC, MassaUnitC, MassaD, MassaUnitD);
-//}
 
 void pilihWaktu(float *inputangka, char *WaktuUnit){
 	header();
@@ -489,17 +469,44 @@ void timeCalc(float *inputangka, float* firstRes, float* secondRes, float* third
 	}
 }
 
-void arithmeticsMenu(int *choice){
+//void arithmeticsMenu(int *choice){
+//	system ("cls");
+//	header();
+//	puts	("\n\n\t\t\t\t\t\t   +==================== PILIH FITUR ARITMATIKA ======================+");
+//    puts	("\t\t\t\t\t\t   |------------------------------------------------------------------|");
+//	puts	("\t\t\t\t\t\t   |                          1. KALKULATOR                           |");
+//    puts	("\t\t\t\t\t\t   |------------------------------------------------------------------|");
+//	puts	("\t\t\t\t\t\t   |                       2. RIWAYAT KALKULATOR                      |");
+//    puts	("\t\t\t\t\t\t   |------------------------------------------------------------------|");
+//	puts	("\t\t\t\t\t\t   |                   3. MENGHAPUS RIWAYAT KALKULATOR                |");
+//    puts	("\t\t\t\t\t\t   +==================================================================+");
+//    printf	("\t\t\t\t\t\t\t\t     --> Pilih menu yang Anda inginkan >> "); scanf("%d", &*choice);
+//}
+
+void arithmeticsMenu(int *choice, char no1[30], char no2[30], char no3[30]){
 	system ("cls");
 	header();
-	printf("\n\t\t\t\t\t\t\t   <<<<<<<<<<<<<<<  Anda memilih opsi 2  >>>>>>>>>>>>>>>"); 
-	puts	("\n\n\t\t\t\t\t\t   |================== PILIH KONFIGURASI ARITMATIKA ====================|");
-	puts	("\t\t\t\t\t\t   |                          1. PENJUMLAHAN                            |");
-	puts	("\t\t\t\t\t\t   |                          2. PENGURANGAN                            |");
-	puts	("\t\t\t\t\t\t   |                          3. PERKALIAN                              |");
-	puts	("\t\t\t\t\t\t   |                          4. PEMBAGIAN                  	        |");
-    puts	("\t\t\t\t\t\t   +====================================================================+");
-    printf	("\t\t\t\t\t\t\t\t   --> Pilih menu yang ingin anda hitung >> "); scanf("%d", choice);
+	puts	("\n\n\t\t\t\t\t\t   +==================== PILIH FITUR ARITMATIKA ======================+");
+    puts	("\t\t\t\t\t\t   |------------------------------------------------------------------|");
+	printf	("\t\t\t\t\t\t   |                          1. %s                           | \n", no1);
+    puts	("\t\t\t\t\t\t   |------------------------------------------------------------------|");
+	printf	("\t\t\t\t\t\t   |                       2. %s                      | \n", no2);
+    puts	("\t\t\t\t\t\t   |------------------------------------------------------------------|");
+	printf	("\t\t\t\t\t\t   |                   3. %s                | \n", no3);
+    puts	("\t\t\t\t\t\t   +==================================================================+");
+    printf	("\t\t\t\t\t\t\t\t     --> Pilih menu yang Anda inginkan >> "); scanf("%d", &*choice);
+}
+
+void ketArith()
+{
+	printf	("\n\t\t\t\t\t\t\t   <<<<<<<<<<<<<<<  Anda memilih opsi 2  >>>>>>>>>>>>>>>");
+	puts	("\n\n\t\t\t\t\t\t\t   +======== KETERANGAN KONFIGURASI ARITMATIKA ========+");    
+	puts	("\t\t\t\t\t\t\t   | ===> Keterangan: + = Pertambahan                  |");
+	puts	("\t\t\t\t\t\t\t   |                  - = Pengurangan                  |");
+	puts	("\t\t\t\t\t\t\t   |                  * = Perkalian                    |");
+	puts	("\t\t\t\t\t\t\t   |                  / = Pembagian                    |");		
+	puts	("\t\t\t\t\t\t\t   | ===> Contoh Inputan : 25 + 70                     |");
+	puts	("\t\t\t\t\t\t\t   +===================================================+"); 
 }
 
 float summation(float* num1, float* num2){
@@ -519,14 +526,14 @@ float division(float* num1, float* num2){
 }
 
 void arithOperator(float* firstNum, char* operSign, float* secondNum){
-//	float x, z, res; char y;
 	FILE *pf;
-	float res; char ch; int penampung;
+	float res; char ch; 
 	system ("cls");
 	header();
-	printf("\n\t\t\t\t\t --> Masukkan ekspresi matematis: (pisahkan bilangan dan operasi dengan SPASI) ");
-	scanf("%f %c %f", firstNum, operSign, secondNum); //ch = getch();
-	printf("\n\t\t\t\t\t ==> Hasil dari perhitungan: %.3f %c %.3f =", *firstNum, *operSign, *secondNum);
+	ketArith();
+	printf("\n\t\t\t\t\t\t --> Masukkan ekspresi matematis: (pisahkan bilangan dan operasi dengan SPASI) ");
+	scanf("%f %c %f", firstNum, operSign, secondNum); 
+	printf("\n\t\t\t\t\t\t ==> Hasil dari perhitungan: %.1f %c %.1f =", *firstNum, *operSign, *secondNum);
 	switch(*operSign){
 		case '+':
 			res = summation(firstNum, secondNum); break;
@@ -539,16 +546,15 @@ void arithOperator(float* firstNum, char* operSign, float* secondNum){
 			res = division(firstNum, secondNum); break;
 		default: break;
 	}
-	if ((pf=fopen("RIWAYAT.txt", "wb")) == NULL)
+	if ((pf=fopen("RIWAYAT.txt", "a+")) == NULL)
 	{
-		printf("File gagal dibuat!\n");
+		printf("\t\t\t\t\t --> File gagal dibuat!\n");
 		exit(1);
 	}
-//	printf("\n%.3f", res);
 
 	printf  ("\n\t\t\t\t\t\t\t       ____________________________________________  \n");
 	printf  ("\t\t\t\t\t\t\t      |  ________________________________________  | \n");
-	printf  ("\t\t\t\t\t\t\t      | |%.3f                                 | | \n", res);
+	printf  ("\t\t\t\t\t\t\t      | |%.1f                                    | | \n", res);
 	printf  ("\t\t\t\t\t\t\t      | |________________________________________| | \n");
 	printf  ("\t\t\t\t\t\t\t      |  _______  _______ _______ _______ _______  | \n");
 	printf  ("\t\t\t\t\t\t\t      | |   C   ||   1   |   2   |   3   |   ^   | | \n");  
@@ -560,28 +566,10 @@ void arithOperator(float* firstNum, char* operSign, float* secondNum){
 	printf  ("\t\t\t\t\t\t\t      | |   +   ||   -   |   *   |   /   |   =   | | \n");
 	printf  ("\t\t\t\t\t\t\t      | |_______||_______|_______|_______|_______| | \n");
 	printf  ("\t\t\t\t\t\t\t      |____________________________________________| \n");
-	penampung = ("%.3f %c %.3f = %.3f", *firstNum, *operSign, *secondNum, res);
-//	printf("\n\n\t\t\t\t\t --> Hasil dari %.3f %c %.3f = %.3f", *firstNum, *operSign, *secondNum, res);	
-	putw(penampung, pf); /* Tulis blangan ke file */
+
+	fprintf(pf,"%.1f %c %.1f = %.1f\n", *firstNum, *operSign, *secondNum, res);
 	fclose(pf);
 }
-
-//void theCalculator() {
-//	printf  ("\t\t\t  ____________________________________________  \n");
-//	printf  ("\t\t\t |  ________________________________________  | \n");
-//	printf  ("\t\t\t | |                                        | | \n");
-//	printf  ("\t\t\t | |________________________________________| | \n");
-//	printf  ("\t\t\t |  _______  _______ _______ _______ _______  | \n");
-//	printf  ("\t\t\t | |   C   ||   1   |   2   |   3   |   ^   | | \n");  
-//	printf  ("\t\t\t | |_______||_______|_______|_______|_______| | \n");  
-//	printf  ("\t\t\t | |  +/_  ||   4   |   5   |   6   |   .   | | \n"); 
-//	printf  ("\t\t\t | |_______||_______|_______|_______|_______| | \n");
-//	printf  ("\t\t\t | |   %%   ||   7   |   8   |   9   |   0   | | \n");
-//	printf  ("\t\t\t | |_______||_______|_______|_______|_______| | \n");
-//	printf  ("\t\t\t | |   +   ||   -   |   x   |   /   |   =   | | \n");
-//	printf  ("\t\t\t | |_______||_______|_______|_______|_______| | \n");
-//	printf  ("\t\t\t |____________________________________________| \n");
-//}
 
 void lessons(){ 
 	system ("cls");
@@ -616,21 +604,35 @@ void lessons(){
 	fclose(f_teks); 
 }
 
-void menuQuiz(int* choice){
-//	int columns = strtol(getenv("COLUMNS"), NULL, 10);
-//	int fwidth = strlen("Hello") + (columns - strlen("Hello")) / 2;
-//	printf("%*s\n", fwidth, "Hello");
+//void menuQuiz(int* choice){
+//	system ("cls");
+//	header();
+//	puts	("\n\n\t\t\t\t\t\t   +=======================  PILIH LEVEL QUIZ  ======================+");
+//    puts	("\t\t\t\t\t\t   |-----------------------------------------------------------------|");
+//	puts	("\t\t\t\t\t\t   |                           1. MUDAH                              |");
+//    puts	("\t\t\t\t\t\t   |-----------------------------------------------------------------|");
+//	puts	("\t\t\t\t\t\t   |                           2. SEDANG                             |");
+//    puts	("\t\t\t\t\t\t   |-----------------------------------------------------------------|");
+//	puts	("\t\t\t\t\t\t   |                           3. SULIT                              |");
+//    puts	("\t\t\t\t\t\t   +=================================================================+");
+//    printf	("\t\t\t\t\t\t\t\t---> Pilih level Quiz yang Anda inginkan >> "); scanf("%d", choice);
+//}
+
+void menuQuiz(int* choice, char no1[30], char no2[30], char no3[30]){
 	system ("cls");
 	header();
 	puts	("\n\n\t\t\t\t\t\t   +=======================  PILIH LEVEL QUIZ  ======================+");
-	puts	("\t\t\t\t\t\t   |                           1. MUDAH                              |");
-	puts	("\t\t\t\t\t\t   |                           2. SEDANG                             |");
-	puts	("\t\t\t\t\t\t   |                           3. SULIT                              |");
+    puts	("\t\t\t\t\t\t   |-----------------------------------------------------------------|");
+	printf	("\t\t\t\t\t\t   |                           1. %s                              | \n", no1);
+    puts	("\t\t\t\t\t\t   |-----------------------------------------------------------------|");
+	printf	("\t\t\t\t\t\t   |                           2. %s                             | \n", no2);
+    puts	("\t\t\t\t\t\t   |-----------------------------------------------------------------|");
+	printf	("\t\t\t\t\t\t   |                           3. %s                              | \n", no3);
     puts	("\t\t\t\t\t\t   +=================================================================+");
     printf	("\t\t\t\t\t\t\t\t---> Pilih level Quiz yang Anda inginkan >> "); scanf("%d", choice);
 }
 
-void quizmudah() {
+void quizmudah(char jawab[30], char pil[30], char benar[30], char salah[30]) {
 	char questions[][100] = {"1. Hasil perhitungan 80 + 42 yaitu:                            ",
 							"2. Hasil dari 100 + 20 x 13 yaitu:                             ",
 							"3. Total dari 1.444 + 112 - 20 :                               ",
@@ -654,46 +656,15 @@ void quizmudah() {
 							"A. membagi 100", "B. membagi 1000", "C. kali 100", "D. membagi 1000"};
 
 	char answers[] = {'A', 'D', 'B', 'B', 'C', 'A', 'C', 'A', 'B', 'B'};
-	int numberOfQuestions = sizeof(questions)/sizeof(questions[0]);
-
+	numberOfQuestions = sizeof(questions)/sizeof(questions[0]);
 	char guess[3];
-	int score;
-   	// unsigned int x_hours=0;
-	// unsigned int x_minutes=0;
-	// unsigned int x_seconds=0;
-	// unsigned int x_milliseconds=0;
-	// unsigned int totaltime=0,count_down_time_in_secs=0,time_left=0;
-
-	// clock_t x_startTime,x_countTime;
-	// count_down_time_in_secs=10;  // 1 minute is 60, 1 hour is 3600
-
-
-    // x_startTime=clock();  // start clock
-    // time_left=count_down_time_in_secs-x_seconds;   // update timer
-
+	
 	printf("QUIZ GAME\n");
 	loadingBar();
 	for(int i = 0; i < numberOfQuestions; i++) {
-//      printf("*******\n");
-//      printf("%s\n", questions[i]);
-//      printf("*******\n");
-//
-//      for(int j = (i * 4); j < (i * 4) + 4; j++)
-//      {
-//         printf("%s\n", options[j]);
-//      }
-		//count_down_time_in_secs=10; x_seconds=0;
-		//time_left=count_down_time_in_secs-x_seconds; // update timer
-		// while (time_left>0){
 		int x=7;
 		system("cls");
 		while (x>0){
-			// x_countTime=clock(); // update timer difference
-			// x_milliseconds=x_countTime-x_startTime;
-			// x_seconds=(x_milliseconds/(CLOCKS_PER_SEC))-(x_minutes*60);
-			// x_minutes=(x_milliseconds/(CLOCKS_PER_SEC))/60;
-			// x_hours=x_minutes/60;
-			// time_left=count_down_time_in_secs-x_seconds; // subtract to get difference
 			system("cls");
 			printf	("\n\t\t\t\t\t      (_______________________________  PERTANYAAN  ______________________________)    \n");
 			printf	("\t\t\t\t\t     ( \\                 					                 / )  \n");
@@ -707,55 +678,53 @@ void quizmudah() {
 				printf("\t\t\t\t\t\t\t\t\t         %s\n", options[j]);
 			}
 			printf( "\n\t\t\t\t\t\t\t\t       --> Waktu Anda %d detik lagi.", x);
-			Sleep(1000);
+			Sleep(1);
 			x--;
-			// printf( "\nYou have %d seconds left ( %d ) count down timer by TopCoder ",time_left,count_down_time_in_secs);
 		}
 		system("cls");
 		printf("\n\n\t\t\t\t\t\t\t\t\t*************************");
-    	printf("\n\t\t\t\t\t\t\t\t\t--> Jawaban Anda: ");
-    	//scanf("%c", &guess[i]);
+    	printf("\n\t\t\t\t\t\t\t\t\t--> %s: ", jawab);
     	guess[i] = getch();
     	printf("\n\t\t\t\t\t\t\t\t\t-------------------------");
-    	//scanf("%c"); //clear \n from input buffer
 
 		guess[i] = toupper(guess[i]);
-		printf("\n\t\t\t\t\t\t\t\t\t--> Pilihan Anda: %c\n", guess[i]);
+		printf("\n\t\t\t\t\t\t\t\t\t--> %s: %c\n", pil, guess[i]);
 
 		if(guess[i] == answers[i]){
-    		printf("\t\t\t\t\t\t\t\t\t=>  BENAR!");
+    		printf("\t\t\t\t\t\t\t\t\t=>  %s", benar);
     		printf("\n\t\t\t\t\t\t\t\t\t*************************");
     		score++;
     	} else {
-        	printf("\t\t\t\t\t\t\t\t\t=>  SALAH :(");
+        	printf("\t\t\t\t\t\t\t\t\t=>  %s", salah);
         	printf("\n\t\t\t\t\t\t\t\t\t*************************");
     	}
 		Sleep(1000);
 	}
 	loadingBar();
 	system("cls");
-	printf	("\n\n\n\t\t\t\t\t\t        __| |____________________________________________| |__  \n");
-	printf	("\t\t\t\t\t\t       (__   ____________________________________________   __) \n");
-	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
-	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
-	printf	("\t\t\t\t\t\t          | |           NILAI ANDA ADALAH: %d/%d          | |     \n", score, numberOfQuestions);
-	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
-	printf	("\t\t\t\t\t\t        __| |____________________________________________| |__  \n");
-	printf	("\t\t\t\t\t\t       (__   ____________________________________________   __) \n");
-	printf	("\t\t\t\t\t\t          | |                                            | |    \n"); 
+	tampilanilai();
+	ketnilai();
+//	printf	("\n\n\n\t\t\t\t\t\t        __| |____________________________________________| |__  \n");
+//	printf	("\t\t\t\t\t\t       (__   ____________________________________________   __) \n");
+//	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
+//	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
+//	printf	("\t\t\t\t\t\t          | |           NILAI ANDA ADALAH: %d/%d          | |     \n", score, numberOfQuestions);
+//	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
+//	printf	("\t\t\t\t\t\t        __| |____________________________________________| |__  \n");
+//	printf	("\t\t\t\t\t\t       (__   ____________________________________________   __) \n");
+//	printf	("\t\t\t\t\t\t          | |                                            | |    \n"); 
 	
-//	printf("NILAI ANDA ADALAH: %d/%d\n", score, numberOfQuestions);
 	
-	if (score >= 8 && score <= 10){
-		printf	("\n\t\t\t\t\t\t\t---> Anda mendapatkan nilai yang sempurna! Selamat! <---");
-	} else if(score >= 5 && score < 8){
-		printf	("\n\t\t\t\t\t\t    ---> Nilai Anda kurang sempurna :(, Ayo coba lagi Quiznya! <---");
-	} else {
-		printf	("\n\t\t\t\t\t   ---> Nilai Anda tidak sempurna ;(, Jangan menyerah! Ayo coba lagi Quiznya! <---");
-	}
+//	if (score >= 8 && score <= 10){
+//		printf	("\n\t\t\t\t\t\t\t---> Anda mendapatkan nilai yang sempurna! Selamat! <---");
+//	} else if(score >= 5 && score < 8){
+//		printf	("\n\t\t\t\t\t\t    ---> Nilai Anda kurang sempurna :(, Ayo coba lagi Quiznya! <---");
+//	} else {
+//		printf	("\n\t\t\t\t\t   ---> Nilai Anda tidak sempurna ;(, Jangan menyerah! Ayo coba lagi Quiznya! <---");
+//	}
 }
 
-void quizsedang(){
+void quizsedang(char jawab[30], char pil[30], char benar[30], char salah[30]){
 	char questions[][100] = {"1. 5 menit berapa detik? :                         ",
 								 "2. 1 Mikrodetik berapa Milidetik? :                ",
 								 "3. 1 gram didefinisikan sebagai:                   ",
@@ -779,35 +748,17 @@ void quizsedang(){
 						   "A. 1", "B. 10", "C. 100", "D. 1000"};
 
 	char answers[] = {'B', 'A', 'B', 'C', 'A', 'B', 'B', 'A', 'B', 'A'};
-	int numberOfQuestions = sizeof(questions)/sizeof(questions[0]);
-
+	numberOfQuestions = sizeof(questions)/sizeof(questions[0]);
 	char guess[3];
-	int score;
 
 	printf("QUIZ GAME\n");
 	loadingBar();
 
 	for(int i = 0; i < numberOfQuestions; i++) {
-//      printf("*******\n");
-//      printf("%s\n", questions[i]);
-//      printf("*******\n");
-//
-//      for(int j = (i * 4); j < (i * 4) + 4; j++)
-//      {
-//         printf("%s\n", options[j]);
-//      }
-		//count_down_time_in_secs=10; x_seconds=0;
-		//time_left=count_down_time_in_secs-x_seconds; // update timer
-		// while (time_left>0){
+
 		int x=10;
 		system("cls");
 		while (x>0){
-			// x_countTime=clock(); // update timer difference
-			// x_milliseconds=x_countTime-x_startTime;
-			// x_seconds=(x_milliseconds/(CLOCKS_PER_SEC))-(x_minutes*60);
-			// x_minutes=(x_milliseconds/(CLOCKS_PER_SEC))/60;
-			// x_hours=x_minutes/60;
-			// time_left=count_down_time_in_secs-x_seconds; // subtract to get difference
 			system("cls");
 			printf	("\n\t\t\t\t\t      (_______________________________  PERTANYAAN  ______________________________)    \n");
 			printf	("\t\t\t\t\t     ( \\                 					                 / )  \n");
@@ -823,53 +774,51 @@ void quizsedang(){
 			printf( "\n\t\t\t\t\t\t\t\t       --> Waktu Anda %d detik lagi.", x);
 			Sleep(1000);
 			x--;
-			// printf( "\nYou have %d seconds left ( %d ) count down timer by TopCoder ",time_left,count_down_time_in_secs);
 		}
 		system("cls");
 		printf("\n\n\t\t\t\t\t\t\t\t\t*************************");
-    	printf("\n\t\t\t\t\t\t\t\t\t--> Jawaban Anda: ");
-    	//scanf("%c", &guess[i]);
+    	printf("\n\t\t\t\t\t\t\t\t\t--> %s: ", jawab);
     	guess[i] = getch();
     	printf("\n\t\t\t\t\t\t\t\t\t-------------------------");
-    	//scanf("%c"); //clear \n from input buffer
 
 		guess[i] = toupper(guess[i]);
-		printf("\n\t\t\t\t\t\t\t\t\t--> Pilihan Anda: %c\n", guess[i]);
+		printf("\n\t\t\t\t\t\t\t\t\t--> %s: %c\n", pil, guess[i]);
 
 		if(guess[i] == answers[i]){
-    		printf("\t\t\t\t\t\t\t\t\t=>  BENAR!");
+    		printf("\t\t\t\t\t\t\t\t\t=>  %s", benar);
     		printf("\n\t\t\t\t\t\t\t\t\t*************************");
     		score++;
     	} else {
-        	printf("\t\t\t\t\t\t\t\t\t=>  SALAH :(");
+        	printf("\t\t\t\t\t\t\t\t\t=>  %s", salah);
         	printf("\n\t\t\t\t\t\t\t\t\t*************************");
     	}
 		Sleep(1000);
 	}
 	loadingBar();
 	system("cls");
-	printf	("\n\n\n\t\t\t\t\t\t        __| |____________________________________________| |__  \n");
-	printf	("\t\t\t\t\t\t       (__   ____________________________________________   __) \n");
-	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
-	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
-	printf	("\t\t\t\t\t\t          | |           NILAI ANDA ADALAH: %d/%d          | |     \n", score, numberOfQuestions);
-	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
-	printf	("\t\t\t\t\t\t        __| |____________________________________________| |__  \n");
-	printf	("\t\t\t\t\t\t       (__   ____________________________________________   __) \n");
-	printf	("\t\t\t\t\t\t          | |                                            | |    \n"); 
+	tampilanilai();
+	ketnilai();
+//	printf	("\n\n\n\t\t\t\t\t\t        __| |____________________________________________| |__  \n");
+//	printf	("\t\t\t\t\t\t       (__   ____________________________________________   __) \n");
+//	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
+//	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
+//	printf	("\t\t\t\t\t\t          | |           NILAI ANDA ADALAH: %d/%d          | |     \n", score, numberOfQuestions);
+//	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
+//	printf	("\t\t\t\t\t\t        __| |____________________________________________| |__  \n");
+//	printf	("\t\t\t\t\t\t       (__   ____________________________________________   __) \n");
+//	printf	("\t\t\t\t\t\t          | |                                            | |    \n"); 
 	
-//	printf("NILAI ANDA ADALAH: %d/%d\n", score, numberOfQuestions);
 	
-	if (score >= 8 && score <= 10){
-		printf	("\n\t\t\t\t\t\t\t---> Anda mendapatkan nilai yang sempurna! Selamat! <---");
-	} else if(score >= 5 && score < 8){
-		printf	("\n\t\t\t\t\t\t    ---> Nilai Anda kurang sempurna :(, Ayo coba lagi Quiznya! <---");
-	} else {
-		printf	("\n\t\t\t\t\t   ---> Nilai Anda tidak sempurna ;(, Jangan menyerah! Ayo coba lagi Quiznya! <---");
-	}
+//	if (score >= 8 && score <= 10){
+//		printf	("\n\t\t\t\t\t\t\t---> Anda mendapatkan nilai yang sempurna! Selamat! <---");
+//	} else if(score >= 5 && score < 8){
+//		printf	("\n\t\t\t\t\t\t    ---> Nilai Anda kurang sempurna :(, Ayo coba lagi Quiznya! <---");
+//	} else {
+//		printf	("\n\t\t\t\t\t   ---> Nilai Anda tidak sempurna ;(, Jangan menyerah! Ayo coba lagi Quiznya! <---");
+//	}
  }
  
- void quizsulit(){
+ void quizsulit(char jawab[30], char pil[30], char benar[30], char salah[30]){
 	char questions[][100] = {"1. 1 km + 1000 hm + 123 cm = __ hm                 ",
 							 "2. 1000 mm + 3 m - 340 cm =__ mm                   ",
 							 "3. 90 Celcius berapa Fahrenheit?                   ",
@@ -894,35 +843,18 @@ void quizsedang(){
 						   "A. 159,999", "B. 160", "C. 159,909", "D. 160,099"};
 
 	char answers[] = {'C', 'B', 'A', 'B', 'D', 'D', 'A', 'B', 'D', 'A'};
-	int numberOfQuestions = sizeof(questions)/sizeof(questions[0]);
-
+	numberOfQuestions = sizeof(questions)/sizeof(questions[0]);
 	char guess[3];
-	int score;
+
 
 	printf("QUIZ GAME\n");
 	loadingBar();
 
 	for(int i = 0; i < numberOfQuestions; i++) {
-//      printf("*******\n");
-//      printf("%s\n", questions[i]);
-//      printf("*******\n");
-//
-//      for(int j = (i * 4); j < (i * 4) + 4; j++)
-//      {
-//         printf("%s\n", options[j]);
-//      }
-		//count_down_time_in_secs=10; x_seconds=0;
-		//time_left=count_down_time_in_secs-x_seconds; // update timer
-		// while (time_left>0){
 		int x=15;
 		system("cls");
 		while (x>0){
-			// x_countTime=clock(); // update timer difference
-			// x_milliseconds=x_countTime-x_startTime;
-			// x_seconds=(x_milliseconds/(CLOCKS_PER_SEC))-(x_minutes*60);
-			// x_minutes=(x_milliseconds/(CLOCKS_PER_SEC))/60;
-			// x_hours=x_minutes/60;
-			// time_left=count_down_time_in_secs-x_seconds; // subtract to get difference
+
 			system("cls");
 			printf	("\n\t\t\t\t\t      (_______________________________  PERTANYAAN  ______________________________)    \n");
 			printf	("\t\t\t\t\t     ( \\                 					                 / )  \n");
@@ -938,48 +870,46 @@ void quizsedang(){
 			printf( "\n\t\t\t\t\t\t\t\t       --> Waktu Anda %d detik lagi.", x);
 			Sleep(1000);
 			x--;
-			// printf( "\nYou have %d seconds left ( %d ) count down timer by TopCoder ",time_left,count_down_time_in_secs);
 		}
 		system("cls");
 		printf("\n\n\t\t\t\t\t\t\t\t\t*************************");
-    	printf("\n\t\t\t\t\t\t\t\t\t--> Jawaban Anda: ");
-    	//scanf("%c", &guess[i]);
+    	printf("\n\t\t\t\t\t\t\t\t\t--> %s: ", jawab);
     	guess[i] = getch();
     	printf("\n\t\t\t\t\t\t\t\t\t-------------------------");
-    	//scanf("%c"); //clear \n from input buffer
 
 		guess[i] = toupper(guess[i]);
-		printf("\n\t\t\t\t\t\t\t\t\t--> Pilihan Anda: %c\n", guess[i]);
+		printf("\n\t\t\t\t\t\t\t\t\t--> %s: %c\n", pil, guess[i]);
 
 		if(guess[i] == answers[i]){
-    		printf("\t\t\t\t\t\t\t\t\t=>  BENAR!");
+    		printf("\t\t\t\t\t\t\t\t\t=>  %s", benar);
     		printf("\n\t\t\t\t\t\t\t\t\t*************************");
     		score++;
     	} else {
-        	printf("\t\t\t\t\t\t\t\t\t=>  SALAH :(");
+        	printf("\t\t\t\t\t\t\t\t\t=>  %s", salah);
         	printf("\n\t\t\t\t\t\t\t\t\t*************************");
     	}
 		Sleep(1000);
 	}
 	loadingBar();
 	system("cls");
-	printf	("\n\n\n\t\t\t\t\t\t        __| |____________________________________________| |__  \n");
-	printf	("\t\t\t\t\t\t       (__   ____________________________________________   __) \n");
-	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
-	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
-	printf	("\t\t\t\t\t\t          | |           NILAI ANDA ADALAH: %d/%d          | |     \n", score, numberOfQuestions);
-	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
-	printf	("\t\t\t\t\t\t        __| |____________________________________________| |__  \n");
-	printf	("\t\t\t\t\t\t       (__   ____________________________________________   __) \n");
-	printf	("\t\t\t\t\t\t          | |                                            | |    \n"); 
+	tampilanilai();
+	ketnilai();
+//	printf	("\n\n\n\t\t\t\t\t\t        __| |____________________________________________| |__  \n");
+//	printf	("\t\t\t\t\t\t       (__   ____________________________________________   __) \n");
+//	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
+//	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
+//	printf	("\t\t\t\t\t\t          | |           NILAI ANDA ADALAH: %d/%d          | |     \n", score, numberOfQuestions);
+//	printf	("\t\t\t\t\t\t          | |                                            | |    \n");
+//	printf	("\t\t\t\t\t\t        __| |____________________________________________| |__  \n");
+//	printf	("\t\t\t\t\t\t       (__   ____________________________________________   __) \n");
+//	printf	("\t\t\t\t\t\t          | |                                            | |    \n"); 
 	
-//	printf("NILAI ANDA ADALAH: %d/%d\n", score, numberOfQuestions);
-	
-	if (score >= 8 && score <= 10){
-		printf	("\n\t\t\t\t\t\t\t---> Anda mendapatkan nilai yang sempurna! Selamat! <---");
-	} else if(score >= 5 && score < 8){
-		printf	("\n\t\t\t\t\t\t    ---> Nilai Anda kurang sempurna :(, Ayo coba lagi Quiznya! <---");
-	} else {
-		printf	("\n\t\t\t\t\t   ---> Nilai Anda tidak sempurna ;(, Jangan menyerah! Ayo coba lagi Quiznya! <---");
-	}
+
+//	if (score >= 8 && score <= 10){
+//		printf	("\n\t\t\t\t\t\t\t---> Anda mendapatkan nilai yang sempurna! Selamat! <---");
+//	} else if(score >= 5 && score < 8){
+//		printf	("\n\t\t\t\t\t\t    ---> Nilai Anda kurang sempurna :(, Ayo coba lagi Quiznya! <---");
+//	} else {
+//		printf	("\n\t\t\t\t\t   ---> Nilai Anda tidak sempurna ;(, Jangan menyerah! Ayo coba lagi Quiznya! <---");
+//	}
  }
