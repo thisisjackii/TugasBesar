@@ -2,7 +2,7 @@
 
 int main(){
 	int numChosen, numInput, result, QuizChosen, banyaknya;
-	float x, y;
+	float x, y, resfloat;
 	char oper, theUnit, expectedUnit, prompt; //char namaKonversi[], contohInputKonv[];
 	do{
 		if_you_chose_wrong:
@@ -41,7 +41,7 @@ int main(){
 							"O = Oktal",
 							"H = Heksadesimal"
 						};
-						convDisplay("Sistem Bilangan", &banyaknya, ktrSisBil, "120 D", &theUnit, &expectedUnit);
+						convDisplay("Sistem Bilangan", &banyaknya, &numInput, ktrSisBil, "120 D", &theUnit, &expectedUnit);
 						numSys();
 						break;
 					case 3:
@@ -57,20 +57,29 @@ int main(){
 							"m = Mili (m-)"
 						};
 //						contohInputKonv[] = "85 K";
-						convDisplay("Metrik", &banyaknya, ktrMetrik, "85 K", &theUnit, &expectedUnit);
+						convDisplay("Metrik", &banyaknya, &numInput, ktrMetrik, "85 K", &theUnit, &expectedUnit);
 						//pilihMetrik(&numInput, &theUnit);
-						metricConv();
+						resfloat = metricConv(numInput, &theUnit, &expectedUnit);
+						printf("\n\nHasil: %f %c", resfloat, expectedUnit);
 						break;
 					case 4:
 						banyaknya = 3;
+						int remaining[2];
 						char ktrWaktu[3][100] = {
 							"J = jam",
 							"M = menit",
 							"D = detik"
 						};
-						convDisplay("Waktu", &banyaknya, ktrWaktu, "60 M", &theUnit, &expectedUnit);
+						convDisplay("Waktu", &banyaknya, &numInput, ktrWaktu, "60 M", &theUnit, &expectedUnit);
 						//pilihWaktu(&numInput, &theUnit);
-						timeCalc();
+						//printf("%d", numInput);
+						result = timeCalc(numInput, &theUnit, &expectedUnit, remaining);
+						printf("\n\nHasil: %d %c", result, expectedUnit, remaining);
+						if(!remaining[1]){
+							printf(" %d %c", remaining[0], 'D');
+						}else{
+							printf(" %d %c %d %c", remaining[0], 'M', remaining[1], 'D');
+						}
 						break;
 					default:
 						printf("\n\n\t\t\t\t\t\t\t\t\t     Wrong input."); sleep(1); 

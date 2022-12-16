@@ -20,9 +20,9 @@ void riwayat();
 void hapusriwayat();
 int temprConv(int* tempra, char* tempraUnit, char* tmpOutputUnit);
 void numSys();
-void metricConv(); //longConv()
-void massConv();
-void timeCalc(); //timeConv()
+float metricConv(); //longConv()
+//void massConv();
+int timeCalc(); //timeConv()
 void convDisplay();
 void pilihSuhu(int tempra, char *tempraUnit, char tmpOutputUnit); //Pilih_Suhu()
 void pilihSistemBilangan(); //Pilih_SistemBilangan()

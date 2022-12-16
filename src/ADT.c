@@ -131,9 +131,12 @@ void convDisplay(char convName[], int* convTypes, int* inpValue, char ktr[][100]
 	}
 	printf	("\n\t\t\t\t\t\t      +===================================================+");  
     printf	("\n\t\t\t\t\t           --> Masukkan besaran beserta satuannya >> ");
+    if(convName=="Waktu"){
+    	printf("\nWaktu\n");
+	}
     scanf("%d %c", inpValue, inpUnit);
-    printf("Output yang diharapkan >> "); *outUnit = getch();
-    printf("%d %c to %c", *inpValue, *inpUnit, *outUnit);
+    printf("\n\t\t\t\t\t\t      Output yang diharapkan >> "); *outUnit = getch(); printf("%c", *outUnit);
+    printf("\n\n\t\t\t\t\t\t      %d %c to %c\n", *inpValue, *inpUnit, *outUnit);
 }
 
 //void pilihSuhu(int tempra, char *tempraUnit, char *tmpOutputUnit){
@@ -158,30 +161,30 @@ int temprConv(int *tempra, char *tempraUnit, char *tmpOutputUnit){
 	return 69;
 }
 
-void pilihSistemBilangan(int *inputangka, char *inisialisasi, char *ubahKe){
-	int choice;
-	system("cls");
-	header();
-	printf	("\n\t\t\t\t\t      <<<<<<<<<<<<<<<  Anda memilih opsi konversi sistem bilangan  >>>>>>>>>>>>>>>"); 
-	puts	("\n\n\t\t\t\t\t\t\t  +============ KONVERSI SISTEM BILANGAN =============+");
-	puts	("\t\t\t\t\t\t\t  | ===> Keterangan: D = Desimal                      |");
-	puts	("\t\t\t\t\t\t\t  |                  B = Biner                        |");
-	puts	("\t\t\t\t\t\t\t  |                  O = Oktal                        |");
-	puts	("\t\t\t\t\t\t\t  |                  H = Heksadesimal                 |");		
-	puts	("\t\t\t\t\t\t\t  | ===> Contoh Inputan : 30 D                        |");
-	puts	("\t\t\t\t\t\t\t  +===================================================+");  
-    printf	("\t\t\t\t\t\t      --> Masukkan angkanya dan inisialisasinya (D, B, O, H) >> ");
-//	backMenu();
-	scanf("%d %c", inputangka, inisialisasi);
-    printf  ("\t\t\t\t\t\t      --> Input anda >> %d %c", *inputangka, *inisialisasi);
-    printf  ("\n\t\t\t\t\t\t      --> Konversi ke-? (D, B, O, H) >> "); *ubahKe = getch();
-    printf  ("\n\t\t\t\t\t\t      --> Konversi ke-? (D, B, O, H) >> %c", *ubahKe);
-//	int angka1, angka2, angka3; char inisialA, inisialB, inisialC;
-//	systemConv(inputangka, &angka1, &angka2, &angka3, inisialisasi, &inisialA, &inisialB, &inisialC);
-	numSys(inputangka, inisialisasi, ubahKe);
-//	printf("\n\t\t\t\t\t\t\t\t\t --> Hasilnya adalah: ");	
-//	printf("\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c",angka1, inisialA, angka2, inisialB, angka3, inisialC);
-}
+//void pilihSistemBilangan(int *inputangka, char *inisialisasi, char *ubahKe){
+//	int choice;
+//	system("cls");
+//	header();
+//	printf	("\n\t\t\t\t\t      <<<<<<<<<<<<<<<  Anda memilih opsi konversi sistem bilangan  >>>>>>>>>>>>>>>"); 
+//	puts	("\n\n\t\t\t\t\t\t\t  +============ KONVERSI SISTEM BILANGAN =============+");
+//	puts	("\t\t\t\t\t\t\t  | ===> Keterangan: D = Desimal                      |");
+//	puts	("\t\t\t\t\t\t\t  |                  B = Biner                        |");
+//	puts	("\t\t\t\t\t\t\t  |                  O = Oktal                        |");
+//	puts	("\t\t\t\t\t\t\t  |                  H = Heksadesimal                 |");		
+//	puts	("\t\t\t\t\t\t\t  | ===> Contoh Inputan : 30 D                        |");
+//	puts	("\t\t\t\t\t\t\t  +===================================================+");  
+//    printf	("\t\t\t\t\t\t      --> Masukkan angkanya dan inisialisasinya (D, B, O, H) >> ");
+////	backMenu();
+//	scanf("%d %c", inputangka, inisialisasi);
+//    printf  ("\t\t\t\t\t\t      --> Input anda >> %d %c", *inputangka, *inisialisasi);
+//    printf  ("\n\t\t\t\t\t\t      --> Konversi ke-? (D, B, O, H) >> "); *ubahKe = getch();
+//    printf  ("\n\t\t\t\t\t\t      --> Konversi ke-? (D, B, O, H) >> %c", *ubahKe);
+////	int angka1, angka2, angka3; char inisialA, inisialB, inisialC;
+////	systemConv(inputangka, &angka1, &angka2, &angka3, inisialisasi, &inisialA, &inisialB, &inisialC);
+//	numSys(inputangka, inisialisasi, ubahKe);
+////	printf("\n\t\t\t\t\t\t\t\t\t --> Hasilnya adalah: ");	
+////	printf("\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c",angka1, inisialA, angka2, inisialB, angka3, inisialC);
+//}
 
 void numSys(int *input, char* convertFrom, char* convertTo){
 	int bin[32], oct[32], divisor; char hex[32];
@@ -281,83 +284,110 @@ void numSys(int *input, char* convertFrom, char* convertTo){
 	}
 }
 
-//void metricConv(float *inputangka, float* firstRes, float* secondRes, float* thirdRes, float* fourRes, float* fivRes, float* sixRes, char *LongUnit, char* firstResUnit, char* secondResUnit, char* thirdResUnit, char* fourResUnit, char* fivResUnit, char* sixResUnit){
-//	switch(*LongUnit){
-//		case 'c': case 'C':
-//			*firstRes = *inputangka / 100; *firstResUnit = 'X';
-//			*secondRes = *inputangka / 100000; *secondResUnit = 'K';
-//			*thirdRes = *inputangka * 10; *thirdResUnit = 'm';
-//			*fourRes = *inputangka / 1000; *fourResUnit = 'D';
-//			*fivRes = *inputangka / 10000; *fivResUnit = 'H';
-//			*sixRes = *inputangka / 10; *sixResUnit = 'd';
-//			break;
-//		case 'x': case 'X': //X adalah meter
-//			*firstRes = *inputangka * 100; *firstResUnit = 'C';
-//			*secondRes = *inputangka / 1000; *secondResUnit = 'K';
-//			*thirdRes = *inputangka * 1000; *thirdResUnit = 'm';
-//			*fourRes = *inputangka / 10; *fourResUnit = 'D';			
-//			*fivRes = *inputangka / 100; *fivResUnit = 'H';
-//			*sixRes = *inputangka * 10; *sixResUnit = 'd';
+float metricConv(int input, char* convertFrom, char* convertTo){
+	char metric[] = {'K', 'H', 'D', 'x', 'd', 'C','M'};//, inp, outInp, msr;
+	float iter;
+	iter = (float)input;
+	//int iter; // iter = 1000000;
+//	printf("Ukuran? (bilangan dan satuannya) ");
+//	scanf("%d %c", &iter, &inp);
+//	printf("Ubah ke satuan apa? ");
+//	scanf(" %c", &outInp);
+	for(int i=0; i<7; i++){
+		if(*convertFrom!=metric[i]){
+			iter = iter / 10;
+			printf("\ni Iter %d = %f", i+1, iter);
+		}else{
+			for(int j=0; j<7; j++){
+				if(*convertTo!=metric[j]){
+					iter = iter * 10;
+					printf("\nj Iter %d = %f", j+1, iter);
+				}else{
+					break;
+				}
+			}
+			break;
+		}
+	}
+	//printf("\n%d %c", iter, outInp);
+	return iter;
+}
+
+//void pilihWaktu(float *inputangka, char *WaktuUnit){
+//	header();
+//	printf	("\n\t\t\t\t\t\t    <<<<<<<<<<<<<<<  Anda memilih opsi konversi waktu  >>>>>>>>>>>>>>>"); 
+//	puts	("\n\n\t\t\t\t\t\t\t  +================== KONVERSI WAKTU =================+");
+//	puts	("\t\t\t\t\t\t\t  | ===> Keterangan: D = Detik       (d)              |");
+//	puts	("\t\t\t\t\t\t\t  |                  K = Mikrodetik  (mcd)            |");
+//	puts	("\t\t\t\t\t\t\t  |                  L = Milidetik   (ms)             |");
+//	puts	("\t\t\t\t\t\t\t  |                  M = Menit       (m)              |");	
+//	puts	("\t\t\t\t\t\t\t  |                  J = Jam         (J)              |");	
+//	puts	("\t\t\t\t\t\t\t  | ===> Contoh Inputan : 60 M                        |");
+//	puts	("\t\t\t\t\t\t\t  +===================================================+");
+//    printf	("\t\t\t\t\t              --> Masukkan waktu beserta satuannya (D, K, L, M, J) >> "); scanf("%f %c", inputangka, WaktuUnit);
+//	float WaktuA, WaktuB, WaktuC, WaktuD; char WaktuUnitA, WaktuUnitB, WaktuUnitC, WaktuUnitD;
+//	timeCalc(inputangka, &WaktuA, &WaktuB, &WaktuC, &WaktuD , WaktuUnit, &WaktuUnitA, &WaktuUnitB, &WaktuUnitC, &WaktuUnitD);
+//	printf("\n\t\t\t\t\t\t\t\t\t --> Hasilnya adalah: ");
+//	printf("\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c", WaktuA, WaktuUnitA, WaktuB, WaktuUnitB, WaktuC, WaktuUnitC, WaktuD, WaktuUnitD);
+//}
+
+//void timeCalc(float *inputangka, float* firstRes, float* secondRes, float* thirdRes, float* fourRes, char *WaktuUnit, char* firstResUnit, char* secondResUnit, char* thirdResUnit, char* fourResUnit){
+//	switch(*WaktuUnit){
+//		case 'd': case 'D':
+//			*firstRes = *inputangka * 1000000; *firstResUnit = 'K';
+//			*secondRes = *inputangka * 1000; *secondResUnit = 'L';
+//			*thirdRes = *inputangka / 60; *thirdResUnit = 'M';
+//			*fourRes = *inputangka / 3600; *fourResUnit = 'J';
 //			break;
 //		case 'k': case 'K':
-//			*firstRes = *inputangka * 100000; *firstResUnit = 'C';
-//			*secondRes = *inputangka * 1000; *secondResUnit = 'X';
-//			*thirdRes = *inputangka * 1000000; *thirdResUnit = 'm';
-//			*fourRes = *inputangka * 100; *fourResUnit = 'D';			
-//			*fivRes = *inputangka * 10; *fivResUnit = 'H';
-//			*sixRes = *inputangka * 10000; *sixResUnit = 'd';
+//			*firstRes = *inputangka / 1000000; *firstResUnit = 'D';
+//			*secondRes = *inputangka / 1000; *secondResUnit = 'L';
+//			*thirdRes = *inputangka / 60000000; *thirdResUnit = 'M';
+//			*fourRes = *inputangka / 3.6000000000; *fourResUnit = 'J';
+//			break;
+//		case 'l': case 'L':
+//			*firstRes = *inputangka / 1000; *firstResUnit = 'D';
+//			*secondRes = *inputangka * 1000; *secondResUnit = 'K';
+//			*thirdRes = *inputangka / 60000; *thirdResUnit = 'M';
+//			*fourRes = *inputangka / 3.6000000; *fourResUnit = 'J';
 //			break; 
 //		case 'm': case 'M':
-//			*firstRes = *inputangka / 10; *firstResUnit = 'C';
-//			*secondRes = *inputangka / 1000; *secondResUnit = 'X';
-//			*thirdRes = *inputangka / 1000000; *thirdResUnit = 'K';
-//			*fourRes = *inputangka / 10000; *fourResUnit = 'D';			
-//			*fivRes = *inputangka / 100000; *fivResUnit = 'H';
-//			*sixRes = *inputangka / 100; *sixResUnit = 'd';
+//			*firstRes = *inputangka * 60; *firstResUnit = 'D';
+//			*secondRes = *inputangka * 60000000; *secondResUnit = 'K';
+//			*thirdRes = *inputangka * 60000; *thirdResUnit = 'L';
+//			*fourRes = *inputangka / 60; *fourResUnit = 'J';
 //			break; 
-//		case 'D':
-//			*firstRes = *inputangka * 1000; *firstResUnit = 'C';
-//			*secondRes = *inputangka * 10; *secondResUnit = 'X';
-//			*thirdRes = *inputangka / 100; *thirdResUnit = 'K';
-//			*fourRes = *inputangka * 10000; *fourResUnit = 'm';			
-//			*fivRes = *inputangka / 10; *fivResUnit = 'H';
-//			*sixRes = *inputangka * 100; *sixResUnit = 'd';
-//			break; 
-//		case 'd':
-//			*firstRes = *inputangka * 10; *firstResUnit = 'C';
-//			*secondRes = *inputangka / 10; *secondResUnit = 'X';
-//			*thirdRes = *inputangka / 10000; *thirdResUnit = 'K';
-//			*fourRes = *inputangka * 100; *fourResUnit = 'm';			
-//			*fivRes = *inputangka / 1000; *fivResUnit = 'H';
-//			*sixRes = *inputangka / 100; *sixResUnit = 'D';
-//			break; 
-//		case 'h': case 'H':
-//			*firstRes = *inputangka * 10000; *firstResUnit = 'C';
-//			*secondRes = *inputangka * 100; *secondResUnit = 'X';
-//			*thirdRes = *inputangka / 10; *thirdResUnit = 'K';
-//			*fourRes = *inputangka * 10; *fourResUnit = 'D';			
-//			*fivRes = *inputangka * 100000; *fivResUnit = 'm';
-//			*sixRes = *inputangka * 1000; *sixResUnit = 'd';
+//		case 'j': case 'J':
+//			*firstRes = *inputangka * 3600; *firstResUnit = 'D';
+//			*secondRes = *inputangka * 3.6000000000; *secondResUnit = 'K';
+//			*thirdRes = *inputangka * 60; *thirdResUnit = 'M';
+//			*fourRes = *inputangka * 3.6000000; *fourResUnit = 'L';
 //			break; 
 //		default:
 //			break;
 //	}
 //}
 
-void metricConv(){
-	char metric[] = {'K', 'H', 'D', 'x', 'd', 'C','M'}, inp, outInp, msr; int iter; // iter = 1000000;
-//	printf("Ukuran? (bilangan dan satuannya) ");
-//	scanf("%d %c", &iter, &inp);
-//	printf("Ubah ke satuan apa? ");
-	scanf(" %c", &outInp);
-	for(int i=0; i<7; i++){
-		if(inp!=metric[i]){
-			iter = iter / 10;
+int timeCalc(int input, char* convertFrom, char* convertTo, int *remaining){
+	char time[] = {'J', 'M', 'D'};//, inp, outInp, msr;
+	//int remaining[2];
+	int iter, iterRemain;
+	printf("\n%d\n", input);
+	iter = input;
+	printf("\n%d\n", iter);
+	for(int i=0; i<3; i++){
+		if(*convertFrom!=time[i]){
+			iterRemain = iter;
+			iter = iter / 60;
+			iterRemain = iterRemain % 60;
+			remaining[i] = iterRemain;
 			printf("\ni Iter %d = %d", i+1, iter);
+			printf("\ni Iter %d Remains = %d", i+1, iterRemain);
+			printf("\nRemaining %d = %d", i, remaining[i]);
 		}else{
-			for(int j=0; j<7; j++){
-				if(outInp!=metric[j]){
-					iter = iter * 10;
+			for(int j=0; j<3; j++){
+				if(*convertTo!=time[j]){
+					iter = iter * 60;
 					printf("\nj Iter %d = %d", j+1, iter);
 				}else{
 					break;
@@ -366,62 +396,8 @@ void metricConv(){
 			break;
 		}
 	}
-	printf("\n%d %c", iter, outInp);
-}
-
-void pilihWaktu(float *inputangka, char *WaktuUnit){
-	header();
-	printf	("\n\t\t\t\t\t\t    <<<<<<<<<<<<<<<  Anda memilih opsi konversi waktu  >>>>>>>>>>>>>>>"); 
-	puts	("\n\n\t\t\t\t\t\t\t  +================== KONVERSI WAKTU =================+");
-	puts	("\t\t\t\t\t\t\t  | ===> Keterangan: D = Detik       (d)              |");
-	puts	("\t\t\t\t\t\t\t  |                  K = Mikrodetik  (mcd)            |");
-	puts	("\t\t\t\t\t\t\t  |                  L = Milidetik   (ms)             |");
-	puts	("\t\t\t\t\t\t\t  |                  M = Menit       (m)              |");	
-	puts	("\t\t\t\t\t\t\t  |                  J = Jam         (J)              |");	
-	puts	("\t\t\t\t\t\t\t  | ===> Contoh Inputan : 60 M                        |");
-	puts	("\t\t\t\t\t\t\t  +===================================================+");
-    printf	("\t\t\t\t\t              --> Masukkan waktu beserta satuannya (D, K, L, M, J) >> "); scanf("%f %c", inputangka, WaktuUnit);
-	float WaktuA, WaktuB, WaktuC, WaktuD; char WaktuUnitA, WaktuUnitB, WaktuUnitC, WaktuUnitD;
-	timeCalc(inputangka, &WaktuA, &WaktuB, &WaktuC, &WaktuD , WaktuUnit, &WaktuUnitA, &WaktuUnitB, &WaktuUnitC, &WaktuUnitD);
-	printf("\n\t\t\t\t\t\t\t\t\t --> Hasilnya adalah: ");
-	printf("\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c\n\t\t\t\t\t\t\t\t\t  => %.3f %c", WaktuA, WaktuUnitA, WaktuB, WaktuUnitB, WaktuC, WaktuUnitC, WaktuD, WaktuUnitD);
-}
-
-void timeCalc(float *inputangka, float* firstRes, float* secondRes, float* thirdRes, float* fourRes, char *WaktuUnit, char* firstResUnit, char* secondResUnit, char* thirdResUnit, char* fourResUnit){
-	switch(*WaktuUnit){
-		case 'd': case 'D':
-			*firstRes = *inputangka * 1000000; *firstResUnit = 'K';
-			*secondRes = *inputangka * 1000; *secondResUnit = 'L';
-			*thirdRes = *inputangka / 60; *thirdResUnit = 'M';
-			*fourRes = *inputangka / 3600; *fourResUnit = 'J';
-			break;
-		case 'k': case 'K':
-			*firstRes = *inputangka / 1000000; *firstResUnit = 'D';
-			*secondRes = *inputangka / 1000; *secondResUnit = 'L';
-			*thirdRes = *inputangka / 60000000; *thirdResUnit = 'M';
-			*fourRes = *inputangka / 3.6000000000; *fourResUnit = 'J';
-			break;
-		case 'l': case 'L':
-			*firstRes = *inputangka / 1000; *firstResUnit = 'D';
-			*secondRes = *inputangka * 1000; *secondResUnit = 'K';
-			*thirdRes = *inputangka / 60000; *thirdResUnit = 'M';
-			*fourRes = *inputangka / 3.6000000; *fourResUnit = 'J';
-			break; 
-		case 'm': case 'M':
-			*firstRes = *inputangka * 60; *firstResUnit = 'D';
-			*secondRes = *inputangka * 60000000; *secondResUnit = 'K';
-			*thirdRes = *inputangka * 60000; *thirdResUnit = 'L';
-			*fourRes = *inputangka / 60; *fourResUnit = 'J';
-			break; 
-		case 'j': case 'J':
-			*firstRes = *inputangka * 3600; *firstResUnit = 'D';
-			*secondRes = *inputangka * 3.6000000000; *secondResUnit = 'K';
-			*thirdRes = *inputangka * 60; *thirdResUnit = 'M';
-			*fourRes = *inputangka * 3.6000000; *fourResUnit = 'L';
-			break; 
-		default:
-			break;
-	}
+	//printf("\n%d %c", iter, outInp);
+	return iter;
 }
 
 void arithmeticsMenu(int *choice){
